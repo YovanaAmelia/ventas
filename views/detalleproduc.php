@@ -68,8 +68,9 @@ Independientemente de la actividad que elijas, ya sea caminar, correr o trotar, 
                             <p class="card-text">Ya sea que aspires a entrenar como un profesional o simplemente a mejorar tu entrenamiento, estos tenis de entrenamiento adidas te ayudan a liberar tu potencial deportivo.</p>
                         </div><br>
                         <div class="text-center">
-                            <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                            <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                            <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                           
+                            <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                         </div>
                     </div>
                 </div>
@@ -84,8 +85,8 @@ Independientemente de la actividad que elijas, ya sea caminar, correr o trotar, 
                             <p class="card-text">Response Super W es un nuevo producto para Mujer de adidas. Te invitamos a ver las imágenes para apreciar más detalles desde diferentes ángulos.</p>
                         </div><br>
                         <div class="text-center">
-                            <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                            <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                        <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                            <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                         </div>
                     </div>
                 </div>
@@ -100,8 +101,8 @@ Independientemente de la actividad que elijas, ya sea caminar, correr o trotar, 
                             <p class="card-text">Fusionando estilo con detalles que evitan las distracciones, la última colección de prendas básicas de running adidas te mantendrá luciendo tan bien como te sientes mientras corres.</p>
                         </div><br>
                         <div class="text-center">
-                            <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                            <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                        <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                            <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                         </div>
                     </div>
                 </div>
@@ -117,8 +118,8 @@ Independientemente de la actividad que elijas, ya sea caminar, correr o trotar, 
                             <p class="card-text">Un estilo icónico para superficies resbaladizas. Estas sandalias de secado rápido presentan una banda superior con las clásicas 3 Tiras.</p>
                         </div><br>
                         <div class="text-center">
-                            <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                            <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                        <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                            <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                         </div>
                     </div>
                 </div>

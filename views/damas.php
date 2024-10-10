@@ -6,7 +6,7 @@
            <h5 class="card-title">ZAPATILLAS</h5>
            <p class="card-text">Tus zapatillas favoritas están aquí con un look llamativo y proporciones aún más audaces. Conoce las zapatillas adidas Ozgaia.</p>
            
-           <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+           <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
          </div>
         
           
@@ -22,7 +22,7 @@
              <div class="card-body">
                <h5 class="card-title">ZAPATILLA</h5>
                <p class="card-text"> El forro interno textil y la suela de caucho le ponen el toque final a un modelo que combina diseño clásico con sensibilidad moderna.</p>
-               <a href="#" class="btn btn-primary" style="background-color:rgb(224, 23, 23);">COMPRAR</a>
+               <a href="<?php echo BASE_URL ?>" class="btn btn-primary" style="background-color:rgb(224, 23, 23);">COMPRAR</a>
              
              </div>
            </div>
@@ -34,7 +34,7 @@
                  <div class="card-body">
                    <h5 class="card-title">ZAPATILLA</h5>
                    <p class="card-text">Estas zapatillas adidas clásicas tienen una suela de caucho que le inyecta suavidad a tus pasos y no marca los pisos de madera.</p>
-                   <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                   <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                  </div>
                </div>
             </div>
@@ -44,7 +44,7 @@
                     <div class="card-body">
                       <h5 class="card-title">ZAPATILLA</h5>
                       <p class="card-text"> Eleva tu estilo urbano con estas zapatillas adidas Court con plataforma Estas zapatillas lucen un exterior textil estilizado .</p>
-                      <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                      <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                     </div>
                   </div>
                 </div>
@@ -54,7 +54,7 @@
                       <div class="card-body">
                         <h5 class="card-title">ZAPATILLA</h5>
                         <p class="card-text">Experimenta la emoción de batir tus propios récords con un calzado tan rápido como tú. Estas zapatillas de running adidas Adizero </p>
-                        <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                        <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                       </div>
                     </div>
                  </div>
@@ -64,7 +64,7 @@
                          <div class="card-body">
                            <h5 class="card-title">ZAPATILLA</h5>
                            <p class="card-text"> Las zapatillas de básquet de los años 70 irrumpieron para inspirar estilo a la hora de vestir todos los días  suavidad  eleva la parte superior. </p>
-                           <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                           <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                          </div>
                        </div>
                      </div>
@@ -74,7 +74,7 @@
                           <div class="card-body">
                             <h5 class="card-title">ZAPATILLA</h5>
                             <p class="card-text">Estas zapatillas adidas amortiguan tus pasos gracias a la liviana mediasuela de EVA. Están diseñadas para ofrecer una pisada suave.</p>
-                            <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                            <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                           </div>
                         </div>
                      </div>
@@ -84,7 +84,7 @@
                              <div class="card-body">
                                <h5 class="card-title">ZAPATILLA</h5>
                                <p class="card-text"> Con estas zapatillas adidas prácticamente puedes sentir la energía de un partido de tenis. Tienen sus raíces en el estilo deportivo.</p>
-                               <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                               <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                              </div>
                            </div>
                          </div>

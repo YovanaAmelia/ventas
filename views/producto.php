@@ -60,8 +60,9 @@
                             <p class="card-text"> Estas zapatillas adidas combinan a la perfección con prácticamente todo lo que tienes en tu armario. La suela de caucho vulcanizada está inspirada en el parque de skate y es perfecta para explorar la ciudad. La parte superior de gamuza suave añade un toque de elegancia. En el interior, la amortiguación ligera y el forro interno suave brindan soporte al pie día tras día.</p>
                         </div><br>
                         <div class="text-center">
-                            <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                            <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                        <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                            <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
+                           
                         </div>
                     </div>
                 </div>
@@ -78,8 +79,8 @@
                                 <p class="card-text">Su diseño liviano te ofrece una total comodidad. Estas zapatillas adidas te permiten moverte con fluidez en todo momento, sin importar si estás caminando por las calles de la ciudad o pasando el rato con amigos. La mediasuela Cloudfoam amortigua tus pasos y el forro interno suave envuelve el pie en su lugar. </p>
                             </div><br>
                             <div class="text-center">
-                                <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                                <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                            <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                            <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                             </div>
                         </div>
                     </div>
@@ -94,8 +95,8 @@
                         <p class="card-text">Con estas zapatillas adidas prácticamente puedes sentir la energía de un partido de zapatillas. Tienen sus raíces en el estilo deportivo de los 70, pero no necesitas estar en la cancha para lucirlas. La suavidad de la plataforma Cloudfoam eleva la parte superior de cuero y aterriza en cada paso con comodidad total e innegable.</p>
                     </div><br>
                     <div class="text-center">
-                        <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                        <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                    <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                    <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                     </div>
                 </div>
             </div>
@@ -110,8 +111,8 @@
                     <p class="card-text">Entra en la aventura con estas llamativas zapatillas inspiradas en Minnie, la ratóna favorita de todos. Los estampados divertidos y los colores brillantes evocan el espíritu divertido y luchador de Minnie, perfecto para cualquier actividad en verano. La suela de una sola pieza burbujeante hace que cada paso sea suave y cómodo.</p>
                 </div><br>
                 <div class="text-center">
-                    <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                    <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                 </div>
             </div>
         </div>
@@ -128,8 +129,8 @@
                          mientras que la suela de caucho te permite explorar con confianza.</p>
                 </div><br>
                 <div class="text-center">
-                    <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                    <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                 </div>
             </div>
         </div>
@@ -144,8 +145,8 @@
                 <p class="card-text">Nacidas en los 60 como calzado de fútbol, las gazelle no muestra indicios de querer parar. Este calzado es la copia exacta de la versión de 1991 del ilustre gazelle.</p>
             </div><br>
             <div class="text-center">
-                <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+            <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
             </div>
         </div>
     </div>
@@ -162,8 +163,8 @@
                              proporciona soporte y estructura para que te sientas tan seguro como te ves.</p>
                     </div><br>
                     <div class="text-center">
-                        <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                        <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                    <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                        <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                     </div>
                 </div>
             </div>
@@ -181,8 +182,8 @@
                         </div><br>
                         <div class="text-center">
                            
-                            <a href="detalles_producto.html" class="btn btn-primary">Ver Detalles</a>
-                            <a href="carrito.html" class="btn btn-success">Añadir a Carrito</a>
+                        <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-primary">Ver Detalles</a>
+                            <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success">Añadir a Carrito</a>
                           
                         </div>
                     </div>

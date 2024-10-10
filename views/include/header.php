@@ -30,7 +30,7 @@
                             <a href="<?php echo BASE_URL ?>login" class="btn btn-success"style="background:pink">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a href="detalleproduc.html" class="btn btn-success"style="background:pink">Productos</a>
+                            <a href="<?php echo BASE_URL ?>detalleproduc" class="btn btn-success"style="background:pink">Productos</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Deportivos</a></li>
                                 <li><a class="dropdown-item" href="#">Zapatillas</a></li>
@@ -41,7 +41,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="<?php echo BASE_URL ?>nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                Categoria
                                
@@ -49,17 +49,17 @@
                             <ul class="dropdown-menu">
                                
                                
-                                <a href="<?php echo BASE_URL ?>Damas" class="btn btn-primary"style="background:pink">Damas</a>
-                                <a href="<?php echo BASE_URL ?>Caballeros" class="btn btn-primary"style="background:pink">Caballeros</a>
-                                <a href="Niñas.html" class="btn btn-primary"style="background:pink">Niñas</a><br>
-                                <a href="Niños.html" class="btn btn-primary"style="background:pink">Niños</a>
+                                <a href="<?php echo BASE_URL ?>damas" class="btn btn-primary"style="background:pink">damas</a>
+                                <a href="<?php echo BASE_URL ?>caballeros" class="btn btn-primary"style="background:pink">caballeros</a>
+                                <a href="<?php echo BASE_URL ?>niñas" class="btn btn-primary"style="background:pink">niñas</a><br>
+                                <a href="<?php echo BASE_URL ?>niños" class="btn btn-primary"style="background:pink">niños</a>
                               
                             </ul>
                         </li>
                     </ul>
                     <form class="d-flex col-6" role="Buscar">
                         <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        <button class="<?php echo BASE_URL ?>btn btn-outline-success" type="submit">Buscar</button>
                       </form>
                       <div class="col-2">
                 </div>

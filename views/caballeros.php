@@ -5,7 +5,7 @@
          <div class="card-body">
            <h5 class="card-title">ZAPATILLAS</h5>
            <p class="card-text">Incorpora un forro interno para  comodidad y un acolchado ligero  con libertad  La suela de caucho vulcanizada se ve genial.</p>
-           <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+           <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
            
          </div>
        </div>
@@ -18,7 +18,7 @@
              <div class="card-body">
                <h5 class="card-title">ZAPATILLA</h5>
                <p class="card-text">  Diseñadas para carreras de larga distancia, incorporan una mediasuela REPETITOR para una máxima amortiguación y una sensación.</p>
-               <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+               <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
              
              </div>
            </div>
@@ -30,7 +30,7 @@
                  <div class="card-body">
                    <h5 class="card-title">ZAPATILLA</h5>
                    <p class="card-text"> Siente un impulso extraordinario en cada zancada con estas zapatillas de running Ultraboost creadas por adidas La mediasuela .</p>
-                   <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                   <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                  </div>
                </div>
             </div>
@@ -40,7 +40,7 @@
                     <div class="card-body">
                       <h5 class="card-title">ZAPATILLA</h5>
                       <p class="card-text"> Relájate después de la sesión de piscina con estas sandalias ideales para la ducha. Su diseño sencillo muestra el auténtico legado de adidas.</p>
-                      <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                      <a href="<?php echo BASE_URL ?>carrito"" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                     </div>
                   </div>
                 </div>
@@ -50,7 +50,7 @@
                       <div class="card-body">
                         <h5 class="card-title">CHIMPUN</h5>
                         <p class="card-text">Los Predator se diseñaron con un único objetivo: anotar goles. Equipados con la última tecnología para anotar goles, prepárate para llevar tu fuerza</p>
-                        <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                        <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                       </div>
                     </div>
                  </div>
@@ -60,7 +60,7 @@
                          <div class="card-body">
                            <h5 class="card-title">ZAPATILLA</h5>
                            <p class="card-text"> Luce las icónicas 3 Tiras sobre un fondo suave de gamuza. Estas zapatillas adidas son refinadas y cómodas. La parte superior de gamuza. </p>
-                           <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                           <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                          </div>
                        </div>
                      </div>
@@ -70,7 +70,7 @@
                           <div class="card-body">
                             <h5 class="card-title">ZAPATILLA</h5>
                             <p class="card-text">Para pies delgados recomendamos comprar la talla inferior. Revisa la equivalencia,  Si este artículo es personalizado, no aplica en nuestra política.</p>
-                            <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                            <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                           </div>
                         </div>
                      </div>
@@ -81,7 +81,7 @@
                              <div class="card-body">
                                <h5 class="card-title">CHIMPUN </h5>
                                <p class="card-text"> . Creados para desbloquear todo el potencial de tu aceleración, movimiento y velocidad. Estos chimpunes adidas  presentan una parte superior.</p>
-                               <a href="carrito.html" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
+                               <a href="<?php echo BASE_URL ?>carrito" class="btn btn-success" style="background-color:rgb(224, 23, 23);">Comprar</a>
                              </div>
                            </div>
                          </div>
