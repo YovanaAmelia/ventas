@@ -59,7 +59,7 @@
                     </ul>
                     <form class="d-flex col-6" role="Buscar">
                         <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-                        <button class="<?php echo BASE_URL ?>btn btn-outline-success" type="submit">Buscar</button>
+                        <button class="<?php echo BASE_URL ?> producto " class ="btn btn-outline-success" type="submit">Buscar</button>
                       </form>
                       <div class="col-2">
                 </div>

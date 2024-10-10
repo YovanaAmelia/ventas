@@ -102,8 +102,8 @@
             </div>
         
             <div class="text-center d-grid gap-2 col-6 mx-auto">
-                <a href="" class="btn btn-success">Pagar</a>
-                <a href="index.html" class="btn btn-primary">Seguir Comprando</a>
+                <a href="<?php echo BASE_URL ?>carrito"class="btn btn-success">Pagar</a>
+                <a href="<?php echo BASE_URL ?>producto" class="btn btn-primary">Seguir Comprando</a>
            
             </div>
         </div>

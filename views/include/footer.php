@@ -3,12 +3,12 @@
     <button type="button" class="btn btn-primary"height="150px"style="background:pink" >  972953479</button>
     <button type="button" class="btn btn-secondary" style="background:pink" >  Llamar</button>
     <img src="./views/plantilla/img/mess.png" class="img-thumbnail" alt="mess.png"width="80px" height="80px">
-    <button type="button" class="btn btn-success" style="background:pink" >  facebook</button>
+    <a href="https://www.facebook.com" target="_blank">Visita mi Facebook</a>
     <button type="button" class="btn btn-danger" style="background:pink" >  calzados.com</button>
     <img src="./views/plantilla/img/waa.png" class="img-thumbnail" alt="waa.png"width="80px" height="80px">
     <button type="button" class="btn btn-warning" style="background:pink" >  WhatsApp</button>
-    <button type="button" class="btn btn-info" style="background:pink" >   Enviar</button>
-    
+ 
+    <a href="https://web.whatsapp.com/" target="_blank">nuestro WhatsApp</a>
     
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

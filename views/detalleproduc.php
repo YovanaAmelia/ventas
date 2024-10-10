@@ -80,7 +80,7 @@ Independientemente de la actividad que elijas, ya sea caminar, correr o trotar, 
                     <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07add52c5d5146008894e7c7d0e1f73b_9366/RESPONSE_SUPER_W_Blanco_IG1408_01_standard.jpg"
                         class="card-img-top w-100" alt="..." style="height: 400px;">
                     <div class="card-body">
-                        <h5 class="card-title">CHIMPUN</h5>
+                        <h5 class="card-title">Zapatilla</h5>
                         <div class="overflow-y-hidden" style="height: 190px;">
                             <p class="card-text">Response Super W es un nuevo producto para Mujer de adidas. Te invitamos a ver las imágenes para apreciar más detalles desde diferentes ángulos.</p>
                         </div><br>
