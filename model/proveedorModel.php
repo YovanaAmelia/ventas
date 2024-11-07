@@ -1,6 +1,6 @@
 <?php
 require_once "../librerias/conexion.php";
-class  categoriaModel
+class  proveedorModel
 {
 
   private $conexion;
@@ -9,10 +9,10 @@ class  categoriaModel
     $this->conexion = new conexion();
     $this->conexion =  $this->conexion->connect();
   }
-  public function obtener_categorias()
+  public function obtener_Proveedor()
   {
     $arrRespuesta = array();
-    $respuesta = $this->conexion->query("SELECT * FROM categoria");
+    $respuesta = $this->conexion->query("SELECT * FROM persona where rol='Proveedor'");
 
     while ($objeto = $respuesta->fetch_object()) {
       array_push($arrRespuesta, $objeto);

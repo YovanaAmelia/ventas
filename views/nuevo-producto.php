@@ -22,7 +22,7 @@
     </div>
     <div>
     <label for=""> Categoria:</label><br>
-   <select type="number"  class="form-control" required id="idcategoria"
+   <select type="number"  class="form-control" required id="idcategoria" name="idcategoria"
         required>
         <option value="">Seleccione</option>
         
@@ -30,11 +30,17 @@
         </div>
     <div>
         <label for=""> Imagen </label><br>
-            <input type="text" placeholder=""id="imagen" name="imagen"class="form-control"><br>
+            <input type="file" placeholder=""id="imagen" name="imagen"class="form-control"><br>
     </div>
     <div>
-        <label for=""> Proveedor </label><br>
-            <input type="number" placeholder=""id="proveedor" name="proveedor" class="form-control"><br>
+    <div>
+    <label for=""> Proveedor:</label><br>
+   <select type="number"  class="form-control" required id=" Proveedor" name=" Proveedor"
+        required>
+        <option value="">Seleccione</option>
+        
+    </select>
+        </div>
     </div> <br>
      <div>
      <button type="button" class="btn btn-success"
@@ -44,4 +50,4 @@
    
 <script src="<?php echo BASE_URL?>views/js/functions_producto.js"></script>
 <script> listar_categorias();</script>
-
+<script> listar_Proveedor();</script>

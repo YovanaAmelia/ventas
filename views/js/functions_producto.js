@@ -6,8 +6,8 @@ async function registrar_producto() {
     let stock = document.querySelector('#stock').value;
     let categoria = document.querySelector('#categoria').value;
     let imagen = document.querySelector('#imagen').value;
-    let provedor = document.querySelector('#proveedor').value;
-    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || categoria == "" ||  imagen == "" || provedor == "") {
+    let proveedor = document.querySelector('#proveedor').value;
+    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || categoria == "" ||  imagen == "" || proveedor == "") {
         alert("error, campos vacios");
         return;
     }
@@ -36,22 +36,58 @@ if(json.status){
 
 async function listar_categorias() {
     try {
-        let respuesta =await fetch(base_url+'controller/Categoria.php?tipo=listar');
+        let respuesta =await fetch(base_url+'controller/categoria.php?tipo=listar');
         json = await respuesta.json();
         if (json.status){
             let datos = json.contenido;
-            datos.forEach(element =>{
-                $('#categoria').append($('<option />'), {
+             let contenido_select = '<option value="">Seleccione</option>';
+             datos.forEach(element=>{
+                contenido_select +='<option value="' + element.id +'">' + element.nombre + '</option>';
+             
+           
+
+             /*    $('#categoria').append($('<option />', {
                     text: `${element.nombre}` ,
                    value: `${element.id}`
-                });
+                })); */
             });
+            document.getElementById('idcategoria').innerHTML = contenido_select;
         }
 
     
  console.log(respuesta);
     }catch (e){  
-        console.log("Error al cargar categorias"+e);
+        console.log("Error al cargar categoria"+e);
     }
     
 }
+//proveedor//
+async function listar_Proveedor() {
+    try {
+        let respuesta =await fetch(base_url+'controller/Proveedor.php?tipo=listar');
+        json = await respuesta.json();
+        if (json.status){
+            let datos = json.contenido;
+             let contenido_select = '<option value="">Seleccione</option>';
+             datos.forEach(element=>{
+                contenido_select +='<option value="' + element.id +'">' + element.razon_social + '</option>';
+             
+           
+
+             /*    $('#categoria').append($('<option />', {
+                    text: `${element.nombre}` ,
+                   value: `${element.id}`
+                })); */
+            });
+            document.getElementById('   Proveedor').innerHTML = contenido_select;
+        }
+
+    
+        console.log(respuesta);
+    }catch (e){  
+
+        console.log("Error al cargar proveedor"+e);
+    }
+    
+}
+      
