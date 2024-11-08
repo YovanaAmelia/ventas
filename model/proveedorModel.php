@@ -12,11 +12,12 @@ class  proveedorModel
   public function obtener_Proveedor()
   {
     $arrRespuesta = array();
-    $respuesta = $this->conexion->query("SELECT * FROM persona where rol='Proveedor'");
+    $respuesta = $this->conexion->query("SELECT * FROM persona where rol='proveedor'");
 
-    while ($objeto = $respuesta->fetch_object()) {
+    while ($objeto = $respuesta->fetch_object()){
       array_push($arrRespuesta, $objeto);
     }
     return $arrRespuesta;
   }
 }
+?>

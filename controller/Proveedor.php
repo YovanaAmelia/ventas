@@ -12,7 +12,10 @@ if ($tipo == "listar") {
     if (!empty($arr_Proveedor)) {
         //recorremos el array para agregar las opciones de la proveedor//
         for ($i = 0; $i < count($arr_Proveedor); $i++) {
-           
+            $id_proveedor = $arr_Proveedor[$i]->id;
+            $razon_Proveedor = $arr_Proveedor[$i]->razon_social;
+            $opciones = ' ';
+            $arr_Proveedor[$i]->options = $opciones;
         }
         $arr_Respuesta['status'] = true;
         $arr_Respuesta['contenido'] = $arr_Proveedor;
@@ -20,3 +23,4 @@ if ($tipo == "listar") {
     }
     echo json_encode($arr_Respuesta);
 }
+?>

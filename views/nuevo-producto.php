@@ -35,10 +35,8 @@
     <div>
     <div>
     <label for=""> Proveedor:</label><br>
-   <select type="number"  class="form-control" required id=" Proveedor" name=" Proveedor"
-        required>
+   <select type="number"  class="form-control" required id="Proveedor" name="Proveedor" required>
         <option value="">Seleccione</option>
-        
     </select>
         </div>
     </div> <br>

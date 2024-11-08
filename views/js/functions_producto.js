@@ -1,3 +1,5 @@
+
+
 async function registrar_producto() {
     let codigo = document.getElementById('codigo').value;
     let nombre = document.querySelector('#nombre').value;
@@ -70,7 +72,7 @@ async function listar_Proveedor() {
             let datos = json.contenido;
              let contenido_select = '<option value="">Seleccione</option>';
              datos.forEach(element=>{
-                contenido_select +='<option value="' + element.id +'">' + element.razon_social + '</option>';
+                contenido_select +='<option value="'+ element.id +'">'+ element.razon_social +'</option>';
              
            
 
@@ -79,7 +81,7 @@ async function listar_Proveedor() {
                    value: `${element.id}`
                 })); */
             });
-            document.getElementById('   Proveedor').innerHTML = contenido_select;
+            document.getElementById('Proveedor').innerHTML = contenido_select;
         }
 
     
