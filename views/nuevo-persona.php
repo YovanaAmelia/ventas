@@ -70,4 +70,3 @@
      onclick="registrar_persona();">registrar</button>
 </div>
 <script src="<?php echo BASE_URL?>views/js/functions_persona.js"></script>
-<script> listar_persona();</script>

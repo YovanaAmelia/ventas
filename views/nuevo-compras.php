@@ -25,4 +25,4 @@
 </form>
    
 <script src="<?php echo BASE_URL?>views/js/functions_compras.js"></script>
-<script> listar_compras();</script>
+
