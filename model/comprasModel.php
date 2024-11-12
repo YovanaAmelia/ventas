@@ -1,6 +1,6 @@
 <?php
 require_once "../librerias/conexion.php";
-class categoriaModel{
+class comprasModel{
 
     private $conexion;
 function __construct()
@@ -10,14 +10,14 @@ function __construct()
 }
 
 
-    public function registrar_categoria($nombre,$detalle){
+    public function registrar_compras($id_producto,$cantidad,$precio,$id_trabajador){
 
         $sql =$this->conexion->query
-        ("CALL insertarCategoria('{'{$nombre}','{$detalle}')");
+        ("CALL insertarCompras('{$id_producto}','{$cantidad}','{$precio}','{$id_trabajador}')");
         $sql = $sql->fetch_object();
         return $sql;
     }
-    
+   
 }
 
 ?>
