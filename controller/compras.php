@@ -37,11 +37,3 @@ if ($tipo == "registrar") {
     }
   }
 } 
-if ($tipo == "listar") {
-  #code...
-
-  if ($tipo == "ver") {
-    #code...
-  }
-  print_r($_POST);
-}

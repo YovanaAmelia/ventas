@@ -11,11 +11,11 @@ function __construct()
 
 
     public function registrar_persona($nro_identidad,$razon_social,$telefono,$correo,$departamento,
-    $provincia,$distrito,$cod_postal,$direccion,$rol,$password,$estado,$fecha_reg){
+    $provincia,$distrito,$cod_postal,$direccion,$rol,$password){
 
         $sql =$this->conexion->query
         ("CALL insertarPersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}',
-        '{$provincia}','{$distrito}','{$cod_postal}','{$direccion}','{$rol}','{$password}','{$estado}','{$fecha_reg}')");
+        '{$provincia}','{$distrito}','{$cod_postal}','{$direccion}','{$rol}','{$password}')");
         $sql = $sql->fetch_object();
         return $sql;
     }

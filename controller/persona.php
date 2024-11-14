@@ -20,15 +20,14 @@ if ($tipo == "registrar") {
         $cod_postal = $_POST['cod_postal'];
         $direccion = $_POST['direccion'];
         $rol = $_POST['rol'];
-        $password = $_POST['password'];
-        $estado = $_POST['estado'];
-        $fecha_reg = $_POST['fecha_reg'];
+        $secure_password =password_hash($dni,PASSWORD_DEFAULT);
+      
 
         // Validación de campos vacíos
         if (
             $nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" ||
             $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" ||
-            $direccion == "" || $rol == "" || $password == "" || $estado == "" || $fecha_reg == ""
+            $direccion == "" || $rol == ""
         ) {
             $arr_Respuesta = array(
                 'status' => false,
@@ -36,7 +35,7 @@ if ($tipo == "registrar") {
               );
             } else {
               $arrpersona = $objpersona->registrar_persona($nro_identidad,$razon_social,$telefono,$correo,$departamento,
-              $provincia,$distrito,$cod_postal,$direccion,$rol,$password,$estado,$fecha_reg);
+              $provincia,$distrito,$cod_postal,$direccion,$rol,$secure_password);
         
               if ($arrpersona->id > 0) {
                 $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso');
@@ -49,12 +48,4 @@ if ($tipo == "registrar") {
             }
           }
         } 
-        if ($tipo == "listar") {
-          #code...
-        
-          if ($tipo == "ver") {
-            #code...
-          }
-          print_r($_POST);
-        }
-        
+      ?>
