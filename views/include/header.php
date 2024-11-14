@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,6 +47,8 @@
                             <a class="<?php echo BASE_URL ?>nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                Categoria
+
+                               <li class="nav1"><a onclick="cerrar_sesion();">cerrar sesion</a></li>
                                
                             </a>
                             <ul class="dropdown-menu">

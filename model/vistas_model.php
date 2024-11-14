@@ -4,7 +4,7 @@ class vistaModelo{
     protected static function obtener_vista($vista){
         $palabras_permitidas=['usuarios','nuevo_usuario','usuario','producto','nuevo-producto','nuevo-categoria','nuevo-compras','nueva-persona','detalleproduc','caballeros','damas','carrito','niños','niñas'];
        
-        if(!isset($_SESSION['sesion_ventas_id'])){
+        if(!isset($_SESSION['sesion_ventas_id'])) {
           return "login";
 
         }

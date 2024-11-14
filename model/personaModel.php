@@ -19,7 +19,11 @@ function __construct()
         $sql = $sql->fetch_object();
         return $sql;
     }
-    
+    public function buscarPersonaPorDNI($dni){
+        $sql = $this->conexion->query("SELECT*FROM persona where nro_identidad='{$dni}'");
+        $sql=$sql->fetch_object();
+        return $sql;
+    }
 }
 
 ?>

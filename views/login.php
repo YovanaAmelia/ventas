@@ -77,26 +77,27 @@
       text-decoration: underline;
     }
   </style>
+   <script> const base_url ='<?php echo BASE_URL;?>';</script>
 </head>
 <body>
-  <div class="login-container" id="frm_iniciar_sesion">
+  <div class="login-container">
     <h2>Iniciar sesión</h2>
     <div class="user-image">
       <img src="./views/plantilla/img/icono3.png" alt="User Image">
     </div>
-    <form>
+    <form id="frm_iniciar_sesion">
       <div class="form-group">
-        <label for="username">Usuario:</label>
-        <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario" required>
+        <label for="usuario">usuario:</label>
+        <input type="usuario" class="form-control" id="usuario" placeholder="Ingrese su usuario" required>
       </div>
       <div class="form-group">
-        <label for="password">Contraseña:</label>
+        <label for="password">contraseña:</label>
         <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña"required>
       </div>
       <div class="form-group forgot-password">
         <a href="#">¿Olvidó la contraseña?</a>
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+      <button type="submit" class="btn btn-primary btn-block">iniciar sesión</button>
      
    
      
