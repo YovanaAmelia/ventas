@@ -8,6 +8,15 @@ function __construct()
     $this->conexion = new conexion();
     $this->conexion =  $this->conexion -> connect();
 }
+public function obtener_productos(){
+    $arrRespuesta = array();
+    $respuesta = $this->conexion->query("SELECT * FROM producto");
+
+    while ($objeto = $respuesta->fetch_object()){
+      array_push($arrRespuesta, $objeto);
+    }
+    return $arrRespuesta; 
+}
 
 
     public function registrar_producto($codigo,$nombre,$detalle,$precio,$stock,

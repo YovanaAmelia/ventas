@@ -1,4 +1,38 @@
 
+async function listar_productos() {
+    try{
+      let respuesta = await fetch(base_url+'controller/Producto.php?tipo=listar');
+      json = await respuesta.json();
+      if (json.status){
+         let datos = json.contenido;
+         let cont  = 0;
+         datos.forEach(item =>{
+             let nueva_fila = document.createElement("tr");
+             //id de la fila y id de base de datos//
+             nueva_fila.id = "fila"+item.id;
+             cont+=1;
+             nueva_fila.innerHTML = `
+                    <th>${cont}</th>
+                    <td>${item.codigo}</td>
+                    <td>${item.nombre}</td>
+                    <td>${item.stock}</td>
+                    <td>${item.categoria.nombre}</td>
+                    <td>${item.id_proveedor}</td>
+                    <td>${item.options}</td>
+                    
+             `;
+             document.querySelector('#tbl_productos').appendChild(nueva_fila);
+         });
+      }
+      console.log(json);
+    }catch(error){
+        console.log("Oops salio un error" + error);
+    } 
+ }
+ if (document.querySelector('#tbl_productos')){
+ listar_productos();
+ }
+
 
 async function registrar_producto() {
     let codigo = document.getElementById('codigo').value;
@@ -22,6 +56,8 @@ async function registrar_producto() {
             cache: 'no-cache',
             body: datos
         });
+        
+
         json = await respuesta.json();
 if(json.status){
     swal("Registro",json.mensaje,"success");
@@ -47,7 +83,6 @@ async function listar_categorias() {
                 contenido_select +='<option value="' + element.id +'">' + element.nombre + '</option>';
              
            
-
              /*    $('#categoria').append($('<option />', {
                     text: `${element.nombre}` ,
                    value: `${element.id}`

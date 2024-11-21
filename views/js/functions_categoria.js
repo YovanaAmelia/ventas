@@ -1,3 +1,37 @@
+async function listar_categorias() {
+    try{
+      let respuesta = await fetch(base_url+'controller/categoria.php?tipo=listar');
+      json = await respuesta.json();
+      if (json.status){
+         let datos = json.contenido;
+         let cont  = 0;
+         datos.forEach(item =>{
+             let nueva_fila = document.createElement("tr");
+             //id de la fila y id de base de datos//
+             nueva_fila.id = "fila"+item.id;
+             cont+=1;
+             nueva_fila.innerHTML = `
+                    <th>${cont}</th>
+                    
+                    <td>${item.nombre}</td>
+                    <td>${item.detalle}</td>
+                   <td>${item.options}</td>
+                    
+             `;
+             document.querySelector('#tbl_categorias').appendChild(nueva_fila);
+         });
+      }
+      console.log(json);
+    }catch(error){
+        console.log("Oops salio un error" + error);
+    } 
+ }
+ if (document.querySelector('#tbl_categorias')){
+ listar_productos();
+ }
+
+
+
 async function registrar_categoria() {
     
     let nombre = document.querySelector('#nombre').value;

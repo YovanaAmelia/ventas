@@ -1,38 +1,26 @@
 <?php
-require_once('../model/categoriaModel.php');
+require_once "../model/categoriaModel.php";
 $tipo = $_REQUEST['tipo'];
 
-$objProducto = new productoModel();
-//instancio el clase modeloproducto
-if ($tipo == "registrar") {
-  //print_r($_POST);
-  //echo$_FILES['imagen']['tmp_name'];
+//instanciar la clase Proveedor molel//
+$objcategoria = new categoriaModel();
 
- 
-  if ($_POST) {
-
-   
-    $nombre = $_POST['nombre'];
-    $detalle = $_POST['detalle'];
-   
-    if (
-       $nombre == "" || $detalle == "" ) {
-      //respuesta
-      $arr_Respuesta = array(
-        'status' => false,
-        'mensaje' => 'Error, campos vacios'
-      );
-    } else {
-      $arrcategoria = $objcategoria->registrar_categoria($nombre,$detalle);
-
-      if ($arrcategoria->id > 0) {
-        $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso');
-        //cargar archivo
-        
-      } else {
-        $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al registrar categoria');
-      }
-      echo json_encode($arr_Respuesta);
+if ($tipo == "listar") {
+    //respuesta
+    $arr_Respuesta = array('status' => false, 'contenido' => '');
+    $arr_categoria = $objcategoria->obtener_categorias();
+    if (!empty($arr_categoria)) {
+        //recorremos el array para agregar las opciones de la proveedor//
+        for ($i = 0; $i < count($arr_categorias); $i++) {
+            $id_categoria = $arr_categoria[$i]->id;
+            $id_categoria = $arr_categoria[$i]->nombre;
+            $opciones = ' ';
+            $arr_categoria[$i]->options = $opciones;
+        }
+        $arr_Respuesta['status'] = true;
+        $arr_Respuesta['contenido'] = $arr_categorias;
+        #code...
     }
-  }
-} 
+    echo json_encode($arr_Respuesta);
+}
+?>
