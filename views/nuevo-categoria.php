@@ -12,7 +12,7 @@
     
      <div>
      <button type="button" class="btn btn-success"
-     onclick="registrar_producto();">registrar</button>
+     onclick="registrar_categoria();">registrar</button>
 </div>
 </form>
    

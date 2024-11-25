@@ -27,7 +27,7 @@ async function listar_categorias() {
     } 
  }
  if (document.querySelector('#tbl_categorias')){
- listar_productos();
+ listar_categorias();
  }
 
 

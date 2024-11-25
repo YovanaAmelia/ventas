@@ -27,7 +27,8 @@ if ($tipo == "listar") {
       $id_producto = $arr_Productos[$i]->id; // Obtener el id
       $nombre_producto = $arr_Productos[$i]->nombre; // Obtener el nombre (sin sobrescribir el array)
       $opciones = '    <button type="button" class="btn btn-success">editar</button>
-       <button type="button" class="btn btn-success">eliminar</button>'; // Asignar opciones vacías
+       <button type="button" class="btn btn-success">eliminar</button>'; 
+      // Asignar opciones vacías
       $arr_Productos[$i]->options = $opciones; // Agregar las opciones al objeto actual
     }
     $arr_Respuesta['status'] = true;
