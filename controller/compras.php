@@ -1,12 +1,11 @@
 <?php
-require_once('../model/productoModel.php');
-require_once('../model/categoriaModel.php');
-require_once('../model/personaModel.php');
+require_once('../model/comprasModel.php');
+
+
 $tipo = $_REQUEST['tipo'];
 
-$objProducto = new productoModel();
-$objcategoria = new categoriaModel();
-$objpersona = new personaModel();
+$objcompra = new comprasModel();
+
 
 //instancio el clase modeloproducto
 if ($tipo == "listar") {
@@ -15,24 +14,24 @@ if ($tipo == "listar") {
 
   //respuesta
   $arr_Respuesta = array('status' => false, 'contenido' => '');
-  $arr_compras = $objcompras->obtener_compras();
-  if (!empty($arr_Productos)) {
+  $arr_compra= $objcompra->obtener_compras();
+  if (!empty($arr_compra)) {
     // recordemos el array para agregar las opciones de las categorias
-    for ($i = 0; $i < count($arr_compras); $i++) {
-      $id_compras = $arr_compras[$i]->id_compras;
-      $r_compras = $objcompras->obtener_compras($id_compras);
-      $arr_compras[$i]->compras = $r_compras;
+    for ($i = 0; $i < count($arr_compra); $i++) {
+      $id_compra = $arr_compra[$i]->id;
+      $r_compra = $objcompra->obtener_compras($id_compra);
+      $arr_compra[$i]->compra = $r_compra;
 
 
-      $id_compras = $arr_compras[$i]->id; // Obtener el id
-      $nombre_compras = $arr_compras[$i]->nombre; // Obtener el nombre (sin sobrescribir el array)
+      $id_compra = $arr_compra[$i]->id; // Obtener el id
+      // Obtener el nombre (sin sobrescribir el array)
       $opciones = '    <button type="button" class="btn btn-success">editar</button>
        <button type="button" class="btn btn-success">eliminar</button>'; 
       // Asignar opciones vacías
-      $arr_compras[$i]->options = $opciones; // Agregar las opciones al objeto actual
+      $arr_compra[$i]->options = $opciones; // Agregar las opciones al objeto actual
     }
     $arr_Respuesta['status'] = true;
-    $arr_Respuesta['contenido'] = $arr_compras;
+    $arr_Respuesta['contenido'] = $arr_compra;
     #code...
   }
   echo json_encode($arr_Respuesta);
@@ -46,7 +45,7 @@ if ($tipo == "registrar") {
     $id_producto = $_POST['id_producto'];
     $cantidad = $_POST['cantidad'];
     $precio = $_POST['precio'];
-    $id_trabajador = $_POST['id_trabajado'];
+    $id_trabajador = $_POST['id_trabajador'];
   
     if (
       $id_producto == "" || $cantidad == "" || $precio == "" || $id_trabajador == "" ) {

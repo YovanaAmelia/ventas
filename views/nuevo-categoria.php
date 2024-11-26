@@ -11,8 +11,8 @@
     </div>
     
      <div>
-     <button type="button" class="btn btn-success"  onclick="registrar_categoria();">registrar</button>
+     <button type="button" class="btn btn-success"
+     onclick="registrar_compras();">registrar</button>
 </div>
-</form>
-   
-<script src="<?php echo BASE_URL?>views/js/functions_categoria.js"></script>
+<script src="<?php echo BASE_URL?>views/js/functions_compras.js"></script>
+<script> listar_compras();</script>

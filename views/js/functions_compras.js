@@ -20,7 +20,7 @@ async function listar_compras() {
                     <td>${item.options}</td>
                     
              `;
-             document.querySelector('#tbl_compras').appendChild(nueva_fila);
+             document.querySelector('#tbl_compra1').appendChild(nueva_fila);
          });
       }
       console.log(json);
@@ -28,7 +28,7 @@ async function listar_compras() {
         console.log("Oops salio un error" + error);
     } 
  }
- if (document.querySelector('#tbl_compras')){
+ if (document.querySelector('#tbl_compra1')){
  listar_compras();
  }
 
