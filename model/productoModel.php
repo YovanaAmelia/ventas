@@ -20,11 +20,11 @@ public function obtener_productos(){
 
 
     public function registrar_producto($codigo,$nombre,$detalle,$precio,$stock,
-    $categoria,$imagen,$proveedor){
+    $categoria,$imagen,$proveedor,$tipoArchivo){
 
         $sql =$this->conexion->query
         ("CALL insertarProducto('{$codigo}','{$nombre}','{$detalle}','{$precio}','{$stock}',
-        '{$categoria}','{$imagen}','{$proveedor}')");
+        '{$categoria}','{$imagen}','{$proveedor}','{$tipoArchivo}')");
         $sql = $sql->fetch_object();
         return $sql;
     }

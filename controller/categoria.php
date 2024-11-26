@@ -1,9 +1,9 @@
 <?php
 require_once "../model/categoriaModel.php";
 $tipo = $_REQUEST['tipo'];
-$objProducto = new productoModel();
+
 $objcategoria = new categoriaModel();
-$objpersona = new personaModel();
+
 
 //instancio el clase modeloproducto
 if ($tipo == "listar") {
@@ -13,22 +13,17 @@ if ($tipo == "listar") {
   //respuesta
   $arr_Respuesta = array('status' => false, 'contenido' => '');
   $arr_categoria = $objcategoria->obtener_Categorias();
-  if (!empty($arr_categorias)) {
+  if (!empty($arr_categoria)) {
     // recordemos el array para agregar las opciones de las categorias
-    for ($i = 0; $i < count($arr_categorias); $i++) {
-      $id_categoria = $arr_Productos[$i]->id_categoria;
+    for ($i = 0; $i < count($arr_categoria); $i++) {
+      $id_categoria = $arr_categoria[$i]->id;
       $r_categoria = $objcategoria->obtener_categorias($id_categoria);
       $arr_categoria[$i]->categoria = $r_categoria;
 
 
-      $id_categoria = $arr_categorias[$i]->id; // Obtener el id
-      $nombre_categoria = $arr_categoria[$i]->nombre; // Obtener el nombre (sin sobrescribir el array)
-      $opciones ='<button type="button" class="btn btn-success">editar</button>
-       <button type="button" class="btn btn-success">eliminar</button>';  // Asignar opciones vacías
-      $arr_categorias[$i]->options = $opciones ; // Agregar las opciones al objeto actual
     }
     $arr_Respuesta['status'] = true;
-    $arr_Respuesta['contenido'] = $arr_categorias;
+    $arr_Respuesta['contenido'] = $arr_categoria;
     #code...
   }
   echo json_encode($arr_Respuesta);

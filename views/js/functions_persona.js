@@ -36,7 +36,7 @@ async function listar_personas() {
     } 
  }
  if (document.querySelector('#tbl_persona1')){
- listar_persona();
+ listar_personas();
  }
 
 
