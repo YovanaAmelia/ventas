@@ -20,7 +20,7 @@ if ($tipo == "listar") {
     // recordemos el array para agregar las opciones de las categorias
     for ($i = 0; $i < count($arr_Productos); $i++) {
       $id_categoria = $arr_Productos[$i]->id_categoria;
-      $r_categoria = $objcategoria->obtener_categoria($id_categoria);
+      $r_categoria = $objcategoria->obtener_categorias($id_categoria);
       $arr_Productos[$i]->categoria = $r_categoria;
 
 

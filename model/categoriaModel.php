@@ -19,10 +19,12 @@ class  categoriaModel
     }
     return $arrRespuesta;
   }
-  public function obtener_categoria($id){
-$respuesta = $this->conexion->query(("SELECT * FROM categoria WHERE id='{$id}'"));
-$objeto = $respuesta->fetch_object();
-return $objeto;
+  public function registrar_categoria($nombre,$detalle){
+
+      $sql =$this->conexion->query
+      ("CALL insertarCategoria('{'{$nombre}','{$detalle}')");
+      $sql = $sql->fetch_object();
+      return $sql;
   }
 }
 ?>

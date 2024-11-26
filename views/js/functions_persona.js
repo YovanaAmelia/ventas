@@ -1,3 +1,45 @@
+async function listar_personas() {
+    try{
+      let respuesta = await fetch(base_url+'controller/persona.php?tipo=listar');
+      json = await respuesta.json();
+      if (json.status){
+         let datos = json.contenido;
+         let cont  = 0;
+         datos.forEach(item =>{
+             let nueva_fila = document.createElement("tr");
+             //id de la fila y id de base de datos//
+             nueva_fila.id = "fila"+item.id;
+             cont+=1;
+             nueva_fila.innerHTML = `
+                    <th>${cont}</th>
+                    <td>${item.nro_identidad}</td>
+                    <td>${item.razon_social}</td>
+                    <td>${item.telefono}</td>
+                    <td>${item.correo}</td>
+                    <td>${item.departamento}</td>
+                    <td>${item.provincia}</td>
+                    <td>${item.distrito}</td>
+                    <td>${item.cod_postal}</td>
+                    <td>${item.direccion}</td>
+                    <td>${item.rol}</td>
+                    <td>${item.password}</td>
+                    
+                    <td>${item.options}</td>
+                    
+             `;
+             document.querySelector('#tbl_persona1').appendChild(nueva_fila);
+         });
+      }
+      console.log(json);
+    }catch(error){
+        console.log("Oops salio un error" + error);
+    } 
+ }
+ if (document.querySelector('#tbl_persona1')){
+ listar_persona();
+ }
+
+
 async function registrar_persona() {
     let nro_identidad = document.getElementById('nro_identidad').value;
     let razon_social = document.querySelector('#razon_social').value;

@@ -12,13 +12,12 @@ async function listar_categorias() {
              cont+=1;
              nueva_fila.innerHTML = `
                     <th>${cont}</th>
-                    
                     <td>${item.nombre}</td>
                     <td>${item.detalle}</td>
-                   <td>${item.options}</td>
+                    <td>${item.options}</td>
                     
              `;
-             document.querySelector('#tbl_categorias').appendChild(nueva_fila);
+             document.querySelector('#tbl_categoria1').appendChild(nueva_fila);
          });
       }
       console.log(json);
@@ -26,13 +25,11 @@ async function listar_categorias() {
         console.log("Oops salio un error" + error);
     } 
  }
- if (document.querySelector('#tbl_categorias')){
- listar_categorias();
+ if (document.querySelector('#tbl_categoria1')){
+    listar_categorias();
  }
 
-
-
-async function registrar_categoria() {
+async function registrar_categorias() {
     
     let nombre = document.querySelector('#nombre').value;
     let detalle = document.querySelector('#detalle').value;

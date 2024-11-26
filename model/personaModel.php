@@ -8,7 +8,15 @@ function __construct()
     $this->conexion = new conexion();
     $this->conexion =  $this->conexion -> connect();
 }
+public function obtener_personas(){
+    $arrRespuesta = array();
+    $respuesta = $this->conexion->query("SELECT * FROM persona");
 
+    while ($objeto = $respuesta->fetch_object()){
+      array_push($arrRespuesta, $objeto);
+    }
+    return $arrRespuesta; 
+}
 
     public function registrar_persona($nro_identidad,$razon_social,$telefono,$correo,$departamento,
     $provincia,$distrito,$cod_postal,$direccion,$rol,$password){
