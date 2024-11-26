@@ -51,7 +51,6 @@
 </div>
 
 <div>
-     <button type="button" class="btn btn-success"
-     onclick="registrar_persona();">registrar</button>
+     <button type="button" class="btn btn-success" onclick="registrar_persona();">registrar</button>
 </div>
 <script src="<?php echo BASE_URL?>views/js/functions_persona.js"></script>

@@ -11,8 +11,7 @@
     </div>
     
      <div>
-     <button type="button" class="btn btn-success"
-     onclick="registrar_categoria();">registrar</button>
+     <button type="button" class="btn btn-success"  onclick="registrar_categoria();">registrar</button>
 </div>
 </form>
    
