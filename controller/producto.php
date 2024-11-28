@@ -26,8 +26,10 @@ if ($tipo == "listar") {
 
       $id_producto = $arr_Productos[$i]->id; // Obtener el id
       $nombre_producto = $arr_Productos[$i]->nombre; // Obtener el nombre (sin sobrescribir el array)
-      $opciones = '    <button type="button" class="btn btn-success">editar</button>
-       <button type="button" class="btn btn-success">eliminar</button>'; 
+
+      //localhost/editar-producto/4
+      $opciones =   '<a href="'.BASE_URL.'editar-producto/'.
+      $id_producto. '">Editar</a> <button onclick="eliminar_producto('.$id_producto.');">Eliminar</button>';
       // Asignar opciones vacías
       $arr_Productos[$i]->options = $opciones; // Agregar las opciones al objeto actual
     }
@@ -97,6 +99,16 @@ if ($tipo == "registrar") {
 
 
 if ($tipo == "ver") {
-  #code...
-}
+ //print_r($_POST);
+ $id_producto = $_POST['id_producto'];
+ $arr_respuestas = $objProducto->verProducto($id_producto);
+// print_r($arr_Respuestas);
+if(empty($arr_Respuesta)){
+$response = array('status'=>false,'mensaje'=>"Error, no hay informacion");
+}else{  
+  $response =array('status'=>"datos encontrados",'contenido'=>$arr_Respuesta);
 
+}
+echo json_encode($response);
+}
+?>

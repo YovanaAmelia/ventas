@@ -4,8 +4,7 @@ require_once('../model/categoriaModel.php');
 require_once('../model/personaModel.php');
 $tipo = $_REQUEST['tipo'];
 
-$objProducto = new productoModel();
-$objcategoria = new categoriaModel();
+
 $objpersona = new personaModel();
 
 //instancio el clase modeloproducto

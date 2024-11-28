@@ -40,10 +40,10 @@ async function registrar_producto() {
     let detalle = document.querySelector('#detalle').value;
     let precio = document.querySelector('#precio').value;
     let stock = document.querySelector('#stock').value;
-    let categoria = document.querySelector('#categoria').value;
+    let idcategoria = document.querySelector('#idcategoria').value;
     let imagen = document.querySelector('#imagen').value;
     let proveedor = document.querySelector('#proveedor').value;
-    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || categoria == "" ||  imagen == "" || proveedor == "") {
+    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || idcategoria == "" ||  imagen == "" || proveedor == "") {
         alert("error, campos vacios");
         return;
     }
@@ -124,6 +124,30 @@ async function listar_Proveedor() {
     }catch (e){  
 
         console.log("Error al cargar proveedor"+e);
+    }
+    
+}
+
+async function ver_producto(id) {
+    const formData = new FormData();
+    formData.append('id_producto',id);
+    try{
+ let respuesta = await fetch(base_url+'controller/Producto.php?tipo=ver',{
+    method: 'POST',
+    mode:'cors',
+    cache:'no-cache',
+    body:formData
+ });
+ json = await respuesta.json();
+ if (json.status){
+    document.querySelector('#codigo').value  =json.contenido.codigo;
+ }else{  
+    window.location =base_url+"productos";
+ }
+
+ console.log(json);
+    }catch (error){
+        console.log("oops ocurrio un error"+error);
     }
     
 }
