@@ -69,3 +69,4 @@ if ($tipo == "registrar") {
     if ($tipo == "ver") {
       #code...
     }
+    ?>
