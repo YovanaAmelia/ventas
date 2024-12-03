@@ -2,7 +2,7 @@
 
 <div>
         <label for=""> Codigo </label> <br>
-            <input type="number" placeholder="" id="codigo" name="codigo"class="form-control"><br>
+            <input type="text" placeholder="" id="codigo" name="codigo"class="form-control"><br>
     </div>
     <div>
         <label for=""> Nombre </label><br>

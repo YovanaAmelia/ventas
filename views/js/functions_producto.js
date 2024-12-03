@@ -141,6 +141,12 @@ async function ver_producto(id) {
  json = await respuesta.json();
  if (json.status){
     document.querySelector('#codigo').value  =json.contenido.codigo;
+    document.querySelector('#nombre').value  =json.contenido.nombre;
+    document.querySelector('#detalle').value  =json.contenido.detalle;
+    document.querySelector('#precio').value  =json.contenido.precio;
+    document.querySelector('#idcategoria').value  =json.contenido.id_categoria;
+    document.querySelector('#Proveedor').value  =json.contenido.id_proveedor;
+
  }else{  
     window.location =base_url+"productos";
  }

@@ -4,10 +4,9 @@ class vistaModel{
     protected static function obtener_vista($vista){
         $palabras_permitidas=['usuarios','nuevo_usuario','usuario','producto','compra1','persona1','editar-producto','categoria1','productos','nuevo-producto','nuevo-categoria','nuevo-compras','nueva-persona','detalleproduc','caballeros','damas','carrito','niños','niñas'];
        
-       /*  if(!isset($_SESSION['sesion_ventas_id'])) {
+/*         if(!isset($_SESSION['sesion_ventas_id'])) {
           return "login";
-
-        } */
+        }  */
         if(in_array($vista,$palabras_permitidas)){
             if(is_file("./views/".$vista.".php")){
                 $contenido="./views/".$vista.".php";
