@@ -15,4 +15,4 @@
      onclick="registrar_compras();">registrar</button>
 </div>
 <script src="<?php echo BASE_URL?>views/js/functions_compras.js"></script>
-<script> listar_compras();</script>
+<script> listar_categorias();</script>

@@ -1,8 +1,8 @@
-<form action="" class="" id="frmRegistrar">  
+<form action="" class="" id="frmActualizar">  
 
 <div>
         <label for=""> Codigo </label> <br>
-            <input type="text" placeholder="" id="codigo" name="codigo"class="form-control"><br>
+            <input type="text" placeholder="" id="codigo" name="codigo" readonly ="form-control"><br>
     </div>
     <div>
         <label for=""> Nombre </label><br>
@@ -38,8 +38,9 @@
         </div>
     </div> <br>
      <div>
+     
      <button type="button" class="btn btn-success"
-     onclick="registrar_producto();">registrar</button>
+     onclick="actualizar_Producto(id_p);">actualizar</button>
 </div>
 </form>
    

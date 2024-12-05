@@ -18,7 +18,7 @@
     </div>
     <div>
         <label for=""> Stock Inicio </label><br>
-            <input type="number" placeholder=""id="stock" name="stock"><br>
+            <input type="number" placeholder="" id="stock" name="stock"><br>
     </div>
     <div>
     <label for=""> Categoria:</label><br>
@@ -35,14 +35,14 @@
     <div>
     <div>
     <label for=""> Proveedor:</label><br>
-   <select type="number"  class="form-control" required id="Proveedor" name="Proveedor" required>
+   <select type="number"  class="form-control" id="Proveedor" name="Proveedor" required>
         <option value="">Seleccione</option>
     </select>
         </div>
     </div> <br>
      <div>
-     <button type="button" class="btn btn-success"
-     onclick="registrar_producto();">registrar</button>
+     <button type="button" class="btn btn-success" onclick="registrar_producto();">registrar</button>
+    
 </div>
 </form>
    

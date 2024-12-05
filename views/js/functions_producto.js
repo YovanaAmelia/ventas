@@ -42,7 +42,8 @@ async function registrar_producto() {
     let stock = document.querySelector('#stock').value;
     let idcategoria = document.querySelector('#idcategoria').value;
     let imagen = document.querySelector('#imagen').value;
-    let proveedor = document.querySelector('#proveedor').value;
+    let proveedor = document.querySelector('#Proveedor').value;
+
     if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || idcategoria == "" ||  imagen == "" || proveedor == "") {
         alert("error, campos vacios");
         return;
@@ -50,7 +51,7 @@ async function registrar_producto() {
     try {
         const datos = new FormData(frmRegistrar); // capturamos datos del formulario html
         // enviar datos hacia el controlador
-        let respuesta = await fetch(base_url + 'controller/Producto.php?tipo=registrar', {
+        let respuesta = await fetch(base_url + 'controller/producto.php?tipo=registrar', {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
@@ -71,6 +72,45 @@ if(json.status){
     }
 
 }
+async function actualizar_Producto(id) {
+    let codigo = document.getElementById('codigo').value;
+    let nombre = document.querySelector('#nombre').value;
+    let detalle = document.querySelector('#detalle').value;
+    let precio = document.querySelector('#precio').value;
+   let idcategoria = document.querySelector('#idcategoria').value;
+    let imagen = document.querySelector('#imagen').value;
+    let proveedor = document.querySelector('#Proveedor').value;
+    if (codigo == "" || nombre == "" || detalle == "" || precio == "" ||  idcategoria == "" ||  imagen == "" || proveedor == "") {
+        alert("error, campos vacios");
+        return;
+    }
+    try {
+        const datos = new FormData(frmActualizar); // capturamos datos del formulario html
+        datos.append('id_producto',id);
+        // enviar datos hacia el controlador
+        let respuesta = await fetch(base_url + 'controller/producto.php?tipo=actualizar', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: datos
+        });
+        
+
+        json = await respuesta.json();
+if(json.status){
+    swal("Registro",json.mensaje,"success");
+}else{  
+    swal("Registro",json.mensaje,"error");
+}
+        console.log(json);
+
+    } catch (e) {
+        console.log("Oops, ocurrio un error" + e);
+    }
+
+}
+
+
 
 async function listar_categorias() {
     try {

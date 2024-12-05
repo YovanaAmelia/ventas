@@ -42,9 +42,6 @@ if ($tipo == "listar") {
 
 
 if ($tipo == "registrar") {
-  #code...
-
-
   //print_r($_POST);
   //echo$_FILES['imagen']['tmp_name'];
 
@@ -56,13 +53,12 @@ if ($tipo == "registrar") {
     $detalle = $_POST['detalle'];
     $precio = $_POST['precio'];
     $stock = $_POST['stock'];
-    $categoria = $_POST['categoria'];
-    $imagen = $_POST['imagen'];
-    $proveedor = $_POST['proveedor'];
+    $categoria = $_POST['idcategoria'];
+    $imagen = 'imagen';
+    $proveedor = $_POST['Proveedor'];
     if (
       $codigo == "" || $nombre == "" || $detalle == "" || $precio == "" || $stock == "" ||
-      $categoria == "" || $imagen == "" || $proveedor == ""
-    ) {
+      $categoria == "" || $imagen == "" || $proveedor == "") {
       //respuesta
       $arr_Respuesta = array(
         'status' => false,
@@ -72,19 +68,16 @@ if ($tipo == "registrar") {
 //cargar archivo
         $archivo = $_FILES['imagen']['tmp_name'];
 
-        $destino = './assets/img_productos/';
+        $destino = '../assets/img_productos/';
         $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
 
       $arrProducto = $objProducto->registrar_producto($codigo, $nombre, $detalle, $precio, $stock, $categoria, $imagen, $proveedor,$tipoArchivo);
 
       if ($arrProducto->id_n > 0) {
-        $newid = $arrProducto->id_n;
         $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso');
         
-
-       
-        $nombre = $arrProducto->id_n . "." . $tipoArchivo;
-        if (move_uploaded_file($archivo, $destino .''. $nombre)) {
+        $nombre = $arrProducto->id_n.".".$tipoArchivo;
+        if (move_uploaded_file($archivo, $destino.''.$nombre)) {
           
         } else {
           $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso , error al subir imagen');
@@ -110,4 +103,52 @@ $response = array('status'=>false,'mensaje'=>"Error, no hay informacion");
 }
 echo json_encode($response);
 }
+
+if ($tipo == "actualizar") {
+  // Obtener datos del formulario
+  $id_producto = $_POST['id_producto']; // ID del producto a actualizar
+  $codigo = $_POST['codigo']; // Código del producto
+  $nombre = $_POST['nombre'];
+  $detalle = $_POST['detalle'];
+  $precio = $_POST['precio'];
+  $id_categoria = $_POST['idcategoria'];
+  $imagen = 'imagen';
+  $proveedor = $_POST['Proveedor'];
+  if (
+    $codigo == "" || $nombre == "" || $detalle == "" || $precio == ""  ||
+    $id_categoria  == "" || $imagen == "" || $proveedor == ""
+  ) {
+    //respuesta
+    $arr_Respuesta = array(
+      'status' => false,
+      'mensaje' => 'Error, campos vacios'
+    );
+  } else {
+//cargar archivo
+      $archivo = $_FILES['imagen']['tmp_name'];
+
+      $destino = '../assets/img_productos/';
+      $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
+
+    $arrProducto = $objProducto->actualizar_Producto($id_producto,$codigo,$nombre,$detalle,$precio,$id_categoria,$imagen,$proveedor,$tipoArchivo);
+
+    if ($arrProducto->p_id > 0) {
+     
+      $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso');
+      
+
+     
+      $nombre = $arrProducto->p_id . "." . $tipoArchivo;
+      if (move_uploaded_file($archivo, $destino .''. $nombre)) {
+        
+      } else {
+        $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso , error al subir imagen');
+      }
+    } else {
+      $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al registrar producto');
+    }
+    echo json_encode($arr_Respuesta);
+  }
+}
+
 ?>
