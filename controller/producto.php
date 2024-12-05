@@ -107,15 +107,16 @@ echo json_encode($response);
 if ($tipo == "actualizar") {
   // Obtener datos del formulario
   $id_producto = $_POST['id_producto']; // ID del producto a actualizar
-  $codigo = $_POST['codigo']; // Código del producto
+  // Código del producto
   $nombre = $_POST['nombre'];
   $detalle = $_POST['detalle'];
   $precio = $_POST['precio'];
+
   $id_categoria = $_POST['idcategoria'];
   $imagen = 'imagen';
   $proveedor = $_POST['Proveedor'];
   if (
-    $codigo == "" || $nombre == "" || $detalle == "" || $precio == ""  ||
+    $id_producto == "" || $nombre == "" || $detalle == "" || $precio == ""  ||
     $id_categoria  == "" || $imagen == "" || $proveedor == ""
   ) {
     //respuesta
@@ -129,8 +130,8 @@ if ($tipo == "actualizar") {
 
       $destino = '../assets/img_productos/';
       $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
-
-    $arrProducto = $objProducto->actualizar_Producto($id_producto,$codigo,$nombre,$detalle,$precio,$id_categoria,$imagen,$proveedor,$tipoArchivo);
+ 
+    $arrProducto = $objProducto->actualizarProducto($id_producto,$nombre,$detalle,$precio,$id_categoria,$imagen,$proveedor,$tipoArchivo);
 
     if ($arrProducto->p_id > 0) {
      
@@ -139,7 +140,7 @@ if ($tipo == "actualizar") {
 
      
       $nombre = $arrProducto->p_id . "." . $tipoArchivo;
-      if (move_uploaded_file($archivo, $destino .''. $nombre)) {
+      if (move_uploaded_file($archivo, $destino .''. $id_producto.'.'.$tipoArchivo)) {
         
       } else {
         $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso , error al subir imagen');
