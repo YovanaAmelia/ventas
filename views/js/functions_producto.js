@@ -72,43 +72,7 @@ if(json.status){
     }
 
 }
-async function actualizar_Producto(id) {
-   let codigo = document.getElementById('codigo').value;
-    let nombre = document.querySelector('#nombre').value;
-    let detalle = document.querySelector('#detalle').value;
-    let precio = document.querySelector('#precio').value;
-   let idcategoria = document.querySelector('#idcategoria').value;
-    let imagen = document.querySelector('#imagen').value;
-    let proveedor = document.querySelector('#Proveedor').value;
-    if ( nombre == "" || detalle == "" || precio == "" ||  idcategoria == "" ||  imagen == "" || proveedor == "") {
-        alert("error, campos vacios");
-        return;
-    }
-    try {
-        const datos = new FormData(frmActualizar); // capturamos datos del formulario html
-        datos.append('id_producto',id);
-        // enviar datos hacia el controlador
-        let respuesta = await fetch(base_url + 'controller/producto.php?tipo=actualizar', {
-            method: 'POST',
-            mode: 'cors',
-            cache: 'no-cache',
-            body: datos
-        });
-        
 
-        json = await respuesta.json();
-if(json.status){
-    swal("Registro",json.mensaje,"success");
-}else{  
-    swal("Registro",json.mensaje,"error");
-}
-        console.log(json);
-
-    } catch (e) {
-        console.log("Oops, ocurrio un error" + e);
-    }
-
-}
 
 
 
@@ -198,4 +162,77 @@ async function ver_producto(id) {
     }
     
 }
-      
+async function actualizar_Producto(id) {
+    let codigo = document.getElementById('codigo').value;
+     let nombre = document.querySelector('#nombre').value;
+     let detalle = document.querySelector('#detalle').value;
+     let precio = document.querySelector('#precio').value;
+    let idcategoria = document.querySelector('#idcategoria').value;
+     let imagen = document.querySelector('#imagen').value;
+     let proveedor = document.querySelector('#Proveedor').value;
+     if ( nombre == "" || detalle == "" || precio == "" ||  idcategoria == "" ||  imagen == "" || proveedor == "") {
+         alert("error, campos vacios");
+         return;
+     }
+     try {
+         const datos = new FormData(frmActualizar); // capturamos datos del formulario html
+         datos.append('id_producto',id);
+         // enviar datos hacia el controlador
+         let respuesta = await fetch(base_url + 'controller/producto.php?tipo=actualizar', {
+             method: 'POST',
+             mode: 'cors',
+             cache: 'no-cache',
+             body: datos
+         });
+         
+ 
+         json = await respuesta.json();
+ if(json.status){
+     swal("Registro",json.mensaje,"success");
+ }else{  
+     swal("Registro",json.mensaje,"error");
+ }
+         console.log(json);
+ 
+     } catch (e) {
+         console.log("Oops, ocurrio un error" + e);
+     }
+ 
+ }  
+async function eliminar_producto(id) {
+    swal({
+        title:"Realmente desea eliminar el producto",
+        Text:'',
+        icon:"warning",
+        buttons:true,
+        dangerMode:true
+    }).then((willDelete)=>{
+if(willDelete){
+    fnt_eliminar(id);
+}
+    })
+    
+}
+async function fnt_eliminar(id){
+ const formdata = new FormData();
+ formdata.append('id_producto', id);
+ try{
+let respuesta = await fetch(base_url + 'controller/producto.php?tipo=eliminar',{
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    body: formdata
+});
+json = await respuesta.json();
+if(json.status){
+    swal("Eliminar", "eliminado correctamente", "success");
+   
+    document.querySelector('#fila'+id).remove();
+}else{  
+    swal('Eliminar','error al eliminar producto','warning');
+    
+}
+ }catch (e){
+    console.log("ocurrio error"+e);
+ }
+}

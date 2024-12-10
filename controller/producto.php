@@ -105,51 +105,50 @@ echo json_encode($response);
 }
 
 if ($tipo == "actualizar") {
-  // Obtener datos del formulario
-  $id_producto = $_POST['id_producto']; // ID del producto a actualizar
-  // Código del producto
+  //print_r($_POST);
+  //print_r($_FILES['imagen']['tmp_name']);
+
+  $id_producto = $_POST['id_producto'];
+  $img = $_POST['img'];
   $nombre = $_POST['nombre'];
   $detalle = $_POST['detalle'];
   $precio = $_POST['precio'];
-
-  $id_categoria = $_POST['idcategoria'];
-  $imagen = 'imagen';
-  $proveedor = $_POST['Proveedor'];
-  if (
-    $id_producto == "" || $nombre == "" || $detalle == "" || $precio == ""  ||
-    $id_categoria  == "" || $imagen == "" || $proveedor == ""
-  ) {
-    //respuesta
-    $arr_Respuesta = array(
-      'status' => false,
-      'mensaje' => 'Error, campos vacios'
-    );
+  $categoria = $_POST['idcategoria'];
+$proveedor = $_POST['Proveedor'];
+  if ($nombre == "" || $detalle == "" || $precio == "" || $categoria == "" ||  $proveedor == "") {
+      //repuesta
+      $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
   } else {
-//cargar archivo
-      $archivo = $_FILES['imagen']['tmp_name'];
+      $arrProducto = $objProducto->actualizarProducto($id_producto,$nombre, $detalle, $precio, $categoria, $proveedor);
+      if ($arrProducto->p_id > 0) {
+          $arr_Respuesta = array('status' => true, 'mensaje' => 'Actualizado Correctamente');
 
-      $destino = '../assets/img_productos/';
-      $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
- 
-    $arrProducto = $objProducto->actualizarProducto($id_producto,$nombre,$detalle,$precio,$id_categoria,$imagen,$proveedor,$tipoArchivo);
+          if ($_FILES['imagen']['tmp_name'] != "") {
+              unlink('../assets/img_productos/' . $img);
 
-    if ($arrProducto->p_id > 0) {
-     
-      $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso');
-      
-
-     
-      $nombre = $arrProducto->p_id . "." . $tipoArchivo;
-      if (move_uploaded_file($archivo, $destino .''. $id_producto.'.'.$tipoArchivo)) {
-        
+              //cargar archivos
+              $archivo = $_FILES['imagen']['tmp_name'];
+              $destino = '../assets/img_productos/';
+              $tipoArchivo = strtolower(pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION));
+              if (move_uploaded_file($archivo, $destino . '' . $id_producto.'.'.$tipoArchivo)) {
+              }
+          }
       } else {
-        $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso , error al subir imagen');
+          $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al actualizar producto');
       }
-    } else {
-      $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al registrar producto');
-    }
-    echo json_encode($arr_Respuesta);
   }
+  echo json_encode($arr_Respuesta);
 }
-
+if ($tipo == "eliminar") {
+  //print_r($_POST);
+  $id_producto = $_POST['id_producto'];
+  $arr_Respuesta = $objProducto->eliminarproducto($id_producto);
+  //print_r($arr_Respuesta);
+  if (empty($arr_Respuesta)) {
+      $response = array('status' => false );
+  } else {
+      $response = array('status' => true);
+  }
+  echo json_encode($response);
+}
 ?>

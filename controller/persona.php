@@ -81,4 +81,50 @@ if ($tipo == "registrar") {
             }
           }
         } 
+        if ($tipo == "ver") {
+          //print_r($_POST);
+          $id_persona = $_POST['id_persona'];
+          $arr_Respuestas = $objPersona->verPersona($id_persona);
+         // print_r($arr_Respuestas);
+         if(empty($arr_Respuestas)){
+         $response = array('status'=>false,'mensaje'=>"Error, no hay informacion");
+         }else{  
+           $response =array('status'=>true,'contenido'=>$arr_Respuestas);
+         }
+         echo json_encode($response);
+         }
+         if ($tipo == "actualizar") {
+          //print_r($_POST);
+          //print_r($_FILES['imagen']['tmp_name']);
+        
+          $nro_identidad = $_POST['nro_identidad'];
+          $razon_social = $_POST['razon_social'];
+          $telefono = $_POST['telefono'];
+          $correo = $_POST['correo'];
+          $departamento = $_POST['departamento'];
+          $provincia = $_POST['provincia'];
+          $distrito = $_POST['distrito'];
+          $cod_postal = $_POST['cod_postal'];
+          $direccion = $_POST['direccion'];
+          $rol = $_POST['rol'];
+          $secure_password =password_hash($dni,PASSWORD_DEFAULT);
+
+          if ($nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" ||
+          $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" ||
+          $direccion == "" || $rol == ""||$secure_password=="") {
+              //repuesta
+              $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
+          } else {
+              $arrPersona = $objPersona->actualizarPersona($nro_identidad,$razon_social,$telefono,$correo,$departamento,
+              $provincia,$distrito,$cod_postal,$direccion,$rol,$secure_password);
+              if ($arrPersona->p_id > 0) {
+                  $arr_Respuesta = array('status' => true, 'mensaje' => 'Actualizado Correctamente');
+        
+                 
+              } else {
+                  $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al actualizar producto');
+              }
+          }
+          echo json_encode($arr_Respuesta);
+        }
       ?>

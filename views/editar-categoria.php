@@ -1,4 +1,4 @@
-<form action="" class="" id="frmRegistrar">  
+<form action="" class="" id="frmActualizar">  
 
 
     <div>

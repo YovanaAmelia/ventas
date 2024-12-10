@@ -25,5 +25,17 @@ class  categoriaModel
       $sql = $sql->fetch_object();
       return $sql;
   }
+
+public function vercategorias($id){
+  $sql = $this->conexion->query("SELECT *FROM categorias WHERE id='$id'");
+  $sql =$sql->fetch_object();
+  return $sql;
+}
+
+  public function actualizarCategorias($nombre,$detalle){
+      $sql = $this->conexion->query("CALL actualizarCategorias('{'{$nombre}','{$detalle}')");
+      $sql = $sql->fetch_object();
+      return $sql;
+  }
 }
 ?>

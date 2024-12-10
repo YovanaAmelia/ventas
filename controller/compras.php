@@ -68,3 +68,41 @@ if ($tipo == "registrar") {
     }
   }
 } 
+if ($tipo == "ver") {
+  //print_r($_POST);
+  $id_compras = $_POST['id_compras'];
+  $arr_Respuestas = $objCompras->verCompras($id_compras);
+ // print_r($arr_Respuestas);
+ if(empty($arr_Respuestas)){
+ $response = array('status'=>false,'mensaje'=>"Error, no hay informacion");
+ }else{  
+   $response =array('status'=>true,'contenido'=>$arr_Respuestas);
+ }
+ echo json_encode($response);
+ }
+
+
+ if ($tipo == "actualizar") {
+  //print_r($_POST);
+  //print_r($_FILES['imagen']['tmp_name']);
+
+  $id_producto = $_POST['id_producto'];
+    $cantidad = $_POST['cantidad'];
+    $precio = $_POST['precio'];
+    $id_trabajador = $_POST['id_trabajador'];
+
+  if ($id_producto == "" || $cantidad == "" || $precio == "" || $id_trabajador == "" ) {
+      //repuesta
+      $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
+  } else {
+      $arrCompras = $objCompras->actualizarCompras($id_producto,$cantidad,$precio,$id_trabajador);
+      if ($arrCompras->p_id > 0) {
+          $arr_Respuesta = array('status' => true, 'mensaje' => 'Actualizado Correctamente');
+
+          
+      } else {
+          $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al actualizar producto');
+      }
+  }
+  echo json_encode($arr_Respuesta);
+}

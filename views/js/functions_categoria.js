@@ -60,3 +60,64 @@ if(json.status){
     }
 
 }
+async function ver_categoria(id) {
+    const formData = new FormData();
+    formData.append('id_categoria',id);
+    try{
+ let respuesta = await fetch(base_url+'controller/categoria.php?tipo=ver',{
+    method: 'POST',
+    mode:'cors',
+    cache:'no-cache',
+    body:formData
+ });
+ json = await respuesta.json();
+ if (json.status){
+   
+    document.querySelector('#nombre').value  =json.contenido.nombre;
+    document.querySelector('#detalle').value  =json.contenido.detalle;
+   
+
+ }else{  
+    window.location =base_url+"categoria1";
+ }
+
+ console.log(json);
+    }catch (error){
+        console.log("oops ocurrio un error"+error);
+    }
+    
+}
+async function actualizar_categoria(id) {
+  
+     let nombre = document.querySelector('#nombre').value;
+     let detalle = document.querySelector('#detalle').value;
+
+     if ( nombre == "" || detalle == "" ) {
+         alert("error, campos vacios");
+         return;
+     }
+     try {
+         const datos = new FormData(frmActualizar); // capturamos datos del formulario html
+         datos.append('id_producto',id);
+         // enviar datos hacia el controlador
+         let respuesta = await fetch(base_url + 'controller/categoria.php?tipo=actualizar', {
+             method: 'POST',
+             mode: 'cors',
+             cache: 'no-cache',
+             body: datos
+         });
+         
+ 
+         json = await respuesta.json();
+ if(json.status){
+     swal("Registro",json.mensaje,"success");
+ }else{  
+     swal("Registro",json.mensaje,"error");
+ }
+         console.log(json);
+ 
+     } catch (e) {
+         console.log("Oops, ocurrio un error" + e);
+     }
+ 
+ }  

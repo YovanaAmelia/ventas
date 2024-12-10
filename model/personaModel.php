@@ -32,6 +32,19 @@ public function obtener_personas(){
         $sql=$sql->fetch_object();
         return $sql;
     }
+    public function verPersona($id){
+        $sql = $this->conexion->query("SELECT *FROM persona WHERE id='$id'");
+        $sql =$sql->fetch_object();
+        return $sql;
+    }
+    public function actualizarPersona($nro_identidad,$razon_social,$telefono,$correo,$departamento,
+    $provincia,$distrito,$cod_postal,$direccion,$rol,$password){
+
+        $sql =$this->conexion->query ("CALL actualizarPersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}',
+        '{$provincia}','{$distrito}','{$cod_postal}','{$direccion}','{$rol}','{$password}')");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
 }
 
 ?>

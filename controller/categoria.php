@@ -30,19 +30,12 @@ if ($tipo == "listar") {
 }
 if ($tipo == "registrar") {
     #code...
-  
-  
-    //print_r($_POST);
+  //print_r($_POST);
     //echo$_FILES['imagen']['tmp_name'];
-  
-  
-    if ($_POST) {
-  
-     
-      $nombre = $_POST['nombre'];
-      $detalle = $_POST['detalle'];
-     
-      if (
+  if ($_POST) {
+   $nombre = $_POST['nombre'];
+   $detalle = $_POST['detalle'];
+     if (
        $nombre == "" || $detalle == ""
       ) {
         //respuesta
@@ -64,9 +57,37 @@ if ($tipo == "registrar") {
         }
       }
     }
-    
-    
     if ($tipo == "ver") {
-      #code...
+      //print_r($_POST);
+      $id_categoria = $_POST['id_categorias'];
+      $arr_Respuestas = $objCategoria->verCategoria($id_categoria);
+     // print_r($arr_Respuestas);
+     if(empty($arr_Respuestas)){
+     $response = array('status'=>false,'mensaje'=>"Error, no hay informacion");
+     }else{  
+       $response =array('status'=>true,'contenido'=>$arr_Respuestas);
+     }
+     echo json_encode($response);
+     }
+     if ($tipo == "actualizar") {
+      //print_r($_POST);
+      //print_r($_FILES['imagen']['tmp_name']);
+      $nombre = $_POST['nombre'];
+      $detalle = $_POST['detalle'];
+ 
+      if ($nombre == "" || $detalle == "") {
+          //repuesta
+          $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
+      } else {
+          $arrProducto = $objProducto->actualizarProducto($nombre, $detalle);
+          if ($arrProducto->p_id > 0) {
+              $arr_Respuesta = array('status' => true, 'mensaje' => 'Actualizado Correctamente');
+    
+
+          } else {
+              $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al actualizar producto');
+          }
+      }
+      echo json_encode($arr_Respuesta);
     }
     ?>

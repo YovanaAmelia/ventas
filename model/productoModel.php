@@ -37,11 +37,16 @@ public function obtener_productos(){
         $sql =$sql->fetch_object();
         return $sql;
     }
-    public function actualizarProducto($id,$codigo,$nombre,$detalle,$precio,
-    $categoria,$imagen,$proveedor,$tipoArchivo){
-
-        $sql =$this->conexion->query ("CALL actualizarProducto('{$id}','{$nombre}','{$detalle}','{$precio}',
-        '{$categoria}','{$imagen}','{$proveedor}','{$tipoArchivo}')");
+   
+        public function actualizarProducto($id, $nombre, $detalle, $precio, $categoria, $proveedor){
+            $sql = $this->conexion->query("CALL actualizarProducto('{$id}','{$nombre}','{$detalle}','{$precio}','{$categoria}','{$proveedor}')");
+            $sql = $sql->fetch_object();
+            return $sql;
+        }
+        
+    
+    public function eliminarProducto($id){
+        $sql =$this->conexion->query ("CALL eliminarproducto('{$id}')");
         $sql = $sql->fetch_object();
         return $sql;
     }
