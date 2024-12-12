@@ -1,5 +1,5 @@
-<form action="" class="form-container shadow" id="frmRegistrar">
-    <h2 class="text-center mb-4">Registrar compras</h2>
+<form action="" class="form-container shadow" id="frmActualizar">
+    <h2 class="text-center mb-4">Actualizar compras</h2>
 
     <!-- Nombre -->
     <div class="form-group">
@@ -29,9 +29,8 @@
     </a>
 
      <div>
-     <button type="button" class="btn btn-success btn-lg" onclick="registrar_compras();">
-            <i class="fas fa-check"></i> Registrar
-        </button>
+     <button type="button" class="btn btn-success"
+     onclick="actualizar_compras();">actualizar</button>
 </div>
 <style>
 /* Formulario principal */
@@ -115,4 +114,3 @@ label {
 </style>
 <script src="<?php echo BASE_URL?>views/js/functions_compras.js"></script>
 <script> listar_compras();</script>
-

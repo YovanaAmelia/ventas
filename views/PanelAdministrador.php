@@ -14,29 +14,8 @@
             </div>
         </div>
 
-        <!-- Proveedores -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow border-0">
-                <div class="card-header text-white bg-success text-center">
-                    Proveedores
-                </div>
-                <div class="card-body text-center">
-                    <a href="<?php BASE_URL;?>usuarios#tabla_proveedores" class="btn btn-light btn-icon mb-2"><i class="fas fa-truck fa-2x text-success"></i><br>Ver Proveedores</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Trabajadores -->
-        <div class="col-md-4 mb-4">
-            <div class="card shadow border-0">
-                <div class="card-header text-white bg-info text-center">
-                    Trabajadores
-                </div>
-                <div class="card-body text-center">
-                    <a href="#" class="btn btn-light btn-icon"><i class="fas fa-briefcase fa-2x text-info"></i><br>Ver Trabajadores</a>
-                </div>
-            </div>
-        </div>
+    
+    
 
         <!-- Productos -->
         <div class="col-md-4 mb-4">
@@ -71,8 +50,8 @@
                     Compras
                 </div>
                 <div class="card-body text-center">
-                    <a href="<?php BASE_URL;?>registrarCompras" class="btn btn-light btn-icon mb-2"><i class="fa fa-shopping-cart fa-2x text-secondary"></i><br>Registrar Compra</a>
-                    <a href="<?php BASE_URL;?>compras" class="btn btn-light btn-icon"><i class="fas fa-receipt fa-2x text-secondary"></i><br>Ver Compras</a>
+                    <a href="<?php BASE_URL;?>nuevo-compras" class="btn btn-light btn-icon mb-2"><i class="fa fa-shopping-cart fa-2x text-secondary"></i><br>Registrar Compra</a>
+                    <a href="<?php BASE_URL;?>compra1" class="btn btn-light btn-icon"><i class="fas fa-receipt fa-2x text-secondary"></i><br>Ver Compras</a>
                 </div>
             </div>
         </div>

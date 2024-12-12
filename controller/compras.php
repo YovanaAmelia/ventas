@@ -25,8 +25,8 @@ if ($tipo == "listar") {
 
       $id_compra = $arr_compra[$i]->id; // Obtener el id
       // Obtener el nombre (sin sobrescribir el array)
-      $opciones = '    <button type="button" class="btn btn-success">editar</button>
-       <button type="button" class="btn btn-success">eliminar</button>'; 
+      $opciones =   '<a href="'.BASE_URL.'editar-compras/'.
+      $id_compra. '">Editar</a> <button onclick="eliminar_compras('.$id_compra.');">Eliminar</button>';
       // Asignar opciones vacías
       $arr_compra[$i]->options = $opciones; // Agregar las opciones al objeto actual
     }
@@ -55,9 +55,9 @@ if ($tipo == "registrar") {
         'mensaje' => 'Error, campos vacios'
       );
     } else {
-      $arrcompras = $objcompras->registrar_compras($id_producto,$cantidad,$precio,$id_trabajador);
+      $arrcompra= $objcompra->registrar_compras($id_producto,$cantidad,$precio,$id_trabajador);
 
-      if ($arrcompras->id > 0) {
+      if ($arrcompra->id > 0) {
         $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso');
         //cargar archivo
        

@@ -11,13 +11,13 @@
             <th>acciones</th>
         </tr>
         <tbody id="tbl_categoria1">
-        <tr>
+      <!--   <tr>
             <td>1</td>
             <td>tacos</td>
             <td>rosa</td>
             <td><button type="button" class="btn btn-success">eliminar  <button type="button" class="btn btn-success">editar</button></button></td>
            
-        </tr>
+        </tr>  -->
      
         <style>
 /* Estilos generales para la tabla */

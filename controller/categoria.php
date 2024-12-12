@@ -1,17 +1,13 @@
 <?php
-require_once "../model/categoriaModel.php";
+require_once ('../model/categoriaModel.php');
 $tipo = $_REQUEST['tipo'];
 
-$objcategorias = new categoriaModel();
+$objcategoria = new categoriaModel();
 
 
 //instancio el clase modeloproducto
 if ($tipo == "listar") {
-
-
-
-  //respuesta
-  $arr_Respuesta = array('status' => false, 'contenido' => '');
+ $arr_Respuesta = array('status' => false, 'contenido' => '');
   $arr_categoria = $objcategoria->obtener_Categorias();
   if (!empty($arr_categoria)) {
     // recordemos el array para agregar las opciones de las categorias
@@ -20,7 +16,12 @@ if ($tipo == "listar") {
       $r_categoria = $objcategoria->obtener_categorias($id_categoria);
       $arr_categoria[$i]->categoria = $r_categoria;
 
-
+        $id_categoria = $arr_categoria[$i]->id; // Obtener el id
+      // Obtener el nombre (sin sobrescribir el array)
+      $opciones =   '<a href="'.BASE_URL.'editar-categoria/'.
+      $id_categoria. '">Editar</a> <button onclick="eliminar_categoria('.$id_categoria.');">Eliminar</button>';
+      // Asignar opciones vacías
+      $arr_categoria[$i]->options = $opciones; 
     }
     $arr_Respuesta['status'] = true;
     $arr_Respuesta['contenido'] = $arr_categoria;
@@ -28,6 +29,8 @@ if ($tipo == "listar") {
   }
   echo json_encode($arr_Respuesta);
 }
+
+
 if ($tipo == "registrar") {
     #code...
   //print_r($_POST);

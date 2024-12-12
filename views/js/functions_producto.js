@@ -148,8 +148,8 @@ async function ver_producto(id) {
     document.querySelector('#nombre').value  =json.contenido.nombre;
     document.querySelector('#detalle').value  =json.contenido.detalle;
     document.querySelector('#precio').value  =json.contenido.precio;
-    document.querySelector('#idcategoria').value  =json.contenido.id_categoria;
-    document.querySelector('#Proveedor').value  =json.contenido.id_proveedor;
+    document.querySelector('#id_categoria').value  =json.contenido.id_categoria;
+    document.querySelector('#id_proveedor').value  =json.contenido.id_proveedor;
     document.querySelector('#img').value  =json.contenido.img;
 
  }else{  
@@ -167,7 +167,7 @@ async function actualizar_Producto(id) {
      let nombre = document.querySelector('#nombre').value;
      let detalle = document.querySelector('#detalle').value;
      let precio = document.querySelector('#precio').value;
-    let idcategoria = document.querySelector('#idcategoria').value;
+    let idcategoria = document.querySelector('#id_categoria').value;
      let imagen = document.querySelector('#imagen').value;
      let proveedor = document.querySelector('#Proveedor').value;
      if ( nombre == "" || detalle == "" || precio == "" ||  idcategoria == "" ||  imagen == "" || proveedor == "") {

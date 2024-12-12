@@ -4,7 +4,7 @@
     <!-- Código -->
     <div class="form-group">
         <label for="codigo">Código</label>
-        <input type="number" placeholder="Ingrese el código" id="codigo" name="codigo" class="form-control" required>
+        <input type="text" placeholder="Ingrese el código" id="codigo" name="codigo" class="form-control" required>
     </div>
 
     <!-- Nombre -->
@@ -64,7 +64,7 @@
 
     <!-- Botón para registrar producto -->
     <button type="button" class="btn btn-success btn-lg" onclick="actualizar_producto();">
-        <i class="fas fa-check"></i> Registrar
+        <i class="fas fa-check"></i> actualizar
     </button>
 </div>
 </form>

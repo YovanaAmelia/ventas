@@ -64,14 +64,14 @@ if(json.status){
 
 }
 async function ver_compras(id) {
-    const formData = new FormData();
-    formData.append('id_compras',id);
+    const formdata = new FormData();
+    formdata.append('id_compras',id);
     try{
  let respuesta = await fetch(base_url+'controller/compras.php?tipo=ver',{
     method: 'POST',
     mode:'cors',
     cache:'no-cache',
-    body:formData
+    body:formdata
  });
  json = await respuesta.json();
  if (json.status){
@@ -126,3 +126,40 @@ async function actualizar_compras(id) {
      }
  
  }  
+ async function eliminar_compras(id) {
+    swal({
+        title:"Realmente desea eliminar el compras",
+        Text:'',
+        icon:"warning",
+        buttons:true,
+        dangerMode:true
+    }).then((willDelete)=>{
+if(willDelete){
+    fnt_eliminar(id);
+}
+    })
+    
+}
+async function fnt_eliminar(id){
+ const formdata = new FormData();
+ formdata.append('id_compras', id);
+ try{
+let respuesta = await fetch(base_url + 'controller/compras.php?tipo=eliminar',{
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    body: formdata
+});
+json = await respuesta.json();
+if(json.status){
+    swal("Eliminar", "eliminado correctamente", "success");
+   
+    document.querySelector('#fila'+id).remove();
+}else{  
+    swal('Eliminar','error al eliminar producto','warning');
+    
+}
+ }catch (e){
+    console.log("ocurrio error"+e);
+ }
+}
