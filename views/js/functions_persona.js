@@ -40,7 +40,7 @@ async function listar_personas() {
  }
 
 
-async function registrar_persona() {
+async function Registrar_persona() {
     let nro_identidad = document.getElementById('nro_identidad').value;
     let razon_social = document.querySelector('#razon_social').value;
     let telefono = document.querySelector('#telefono').value;

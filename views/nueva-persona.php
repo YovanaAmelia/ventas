@@ -4,7 +4,7 @@
     <!-- Número de Identidad -->
     <div class="form-group">
         <label for="nro_identidad">Nro de Identidad</label>
-        <input type="number" class="form-control" id="nro_identidad" name="nro_identidad" placeholder="Ingrese el número de identidad" required>
+        <input type="text" class="form-control" id="nro_identidad" name="nro_identidad" placeholder="Ingrese el número de identidad" required>
     </div>
 
     <!-- Razón Social -->
@@ -60,6 +60,7 @@
         <label for="rol">Rol</label>
         <input type="text" class="form-control" id="rol" name="rol" placeholder="Ingrese el rol" required>
     </div>
+    <div></div>
 
     <!-- Botones -->
     <div class="text-center mt-4">
@@ -70,7 +71,9 @@
       </div>
 
         <div class="text-center mt-4">
-         <button type="button" class="btn btn-success" onclick="registrar_persona();">registrar</button>
+        <button type="button" class="btn btn-success btn-lg" onclick="Registrar_persona();">
+        <i class="fas fa-check"></i> Registrar
+    </button>
       </div>
     </div>
 </form>

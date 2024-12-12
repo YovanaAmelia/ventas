@@ -18,15 +18,11 @@ public function obtener_personas(){
     return $arrRespuesta; 
 }
 
-    public function registrar_persona($nro_identidad,$razon_social,$telefono,$correo,$departamento,
-    $provincia,$distrito,$cod_postal,$direccion,$rol,$password){
-
-        $sql =$this->conexion->query
-        ("CALL insertarPersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}',
-        '{$provincia}','{$distrito}','{$cod_postal}','{$direccion}','{$rol}','{$password}')");
-        $sql = $sql->fetch_object();
-        return $sql;
-    }
+public function registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $codpostal, $direccion, $rol, $password){
+    $sql = $this->conexion->query("CALL insertarPersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}','{$provincia}','{$distrito}','{$codpostal}','{$direccion}','{$rol}','{$password}')");
+    $sql = $sql->fetch_object();
+    return $sql;
+}
     public function buscarPersonaPorDNI($dni){
         $sql = $this->conexion->query("SELECT*FROM persona where nro_identidad='{$dni}'");
         $sql=$sql->fetch_object();

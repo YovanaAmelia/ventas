@@ -2,7 +2,7 @@
 require_once "../model/categoriaModel.php";
 $tipo = $_REQUEST['tipo'];
 
-$objcategoria = new categoriaModel();
+$objcategorias = new categoriaModel();
 
 
 //instancio el clase modeloproducto
@@ -44,9 +44,9 @@ if ($tipo == "registrar") {
           'mensaje' => 'Error, campos vacios'
         );
       } else {
-        $arr_categorias = $objcategorias->registrar_categoria($nombre, $detalle);
+        $arr_categorias = $objcategorias->registrar_categorias($nombre,$detalle);
   
-        if ($arrProducto->id > 0) {
+        if ($arrcategorias->id > 0) {
             $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso');
             //cargar archivo
             

@@ -19,9 +19,10 @@ class  categoriaModel
     }
     return $arrRespuesta;
   }
-  public function registrar_categoria($nombre,$detalle){
+  public function registrar_categorias($nombre,$detalle){
 
-      $sql =$this->conexion->query("CALL insertarCategoria('{'{$nombre}','{$detalle}')");
+      $sql =$this->conexion->query
+      ("CALL insertarCategoria('{$nombre}','{$detalle}')");
       $sql = $sql->fetch_object();
       return $sql;
   }

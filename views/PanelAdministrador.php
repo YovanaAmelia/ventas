@@ -5,11 +5,11 @@
         <div class="col-md-4 mb-4">
             <div class="card shadow border-0">
                 <div class="card-header text-white bg-primary text-center">
-                    Usuario
+                    Persona
                 </div>
                 <div class="card-body text-center">
-                    <a href="<?php BASE_URL;?>nueva-persona" class="btn btn-light btn-icon mb-2"><i class="fa fa-user-plus fa-2x text-primary"></i><br>Registrar Usuario</a>
-                    <a href="<?php BASE_URL;?>persona1" class="btn btn-light btn-icon"><i class="fas fa-users fa-2x text-primary"></i><br>Ver Usuarios</a>
+                    <a href="<?php BASE_URL;?>nueva-persona" class="btn btn-light btn-icon mb-2"><i class="fa fa-user-plus fa-2x text-primary"></i><br>Registrar Persona</a>
+                    <a href="<?php BASE_URL;?>persona1" class="btn btn-light btn-icon"><i class="fas fa-users fa-2x text-primary"></i><br>Ver Persona</a>
                 </div>
             </div>
         </div>
@@ -58,8 +58,8 @@
                     Categorías
                 </div>
                 <div class="card-body text-center">
-                    <a href="<?php BASE_URL;?>nuevaCategoria" class="btn btn-light btn-icon mb-2"><i class="fa fa-tags fa-2x text-danger"></i><br>Registrar Categoría</a>
-                    <a href="<?php BASE_URL;?>categorias" class="btn btn-light btn-icon"><i class="fas fa-list fa-2x text-danger"></i><br>Ver Categorías</a>
+                    <a href="<?php BASE_URL;?>nuevo-categoria" class="btn btn-light btn-icon mb-2"><i class="fa fa-tags fa-2x text-danger"></i><br>Registrar Categoría</a>
+                    <a href="<?php BASE_URL;?>categoria1" class="btn btn-light btn-icon"><i class="fas fa-list fa-2x text-danger"></i><br>Ver Categorías</a>
                 </div>
             </div>
         </div>
