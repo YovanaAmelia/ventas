@@ -83,7 +83,7 @@ async function listar_categorias() {
                 contenido_select += '<option value="' + element.id + '">' + element.nombre + '</option>';
                 /* $('#categoria').append($('<option />',{
                      text: ${element.nombre},
-                     value: ${element.id}
+     m .                value: ${element.id}
                  }));*/
             });
             document.getElementById('categoria').innerHTML = contenido_select;
