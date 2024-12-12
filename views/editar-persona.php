@@ -1,9 +1,7 @@
 <form action="" class="" id="frmActualizar"> 
 <div>
 <label for="">nro_identidad:</label><br>
-   <select type="number"  class="form-control" required id="nro_identidad" name="nro_identidad" required>
-        <option value="">Seleccione</option>
-    </select>
+   <input type="number"  class="form-control" required id="nro_identidad" name="nro_identidad" required>
 <br>
 <div>
 <label for="razon_social">razon_social</label><br>
@@ -45,19 +43,18 @@
 <textarea id="direccion" name="direccion" required></textarea><br>
 <br>
 </div>
-<div>
-<label for="rol">rol</label><br>
-<input type="text" id="rol" name="rol" required><br>
-<br>
+<div class="mb-3">
+    <label for="rol">Rol:</label>
+    <select id="rol" name="rol" class="form-control" required>
+        <option value="" disabled selected>Seleccione un rol</option>
+        <option value="proveedor">Proveedor</option>
+        <option value="trabajador">Trabajador</option>
+        <option value="trabajador">Adimistrador</option>
+    </select>
 </div>
 <div>
 <label for="password">password</label><br>
 <input type="password" id="password" name="password" required><br>
-<br>
-</div>
-<div>
-<label for="estado">estado</label><br>
-<input type="number" id="estado" name="estado" required><br>
 <br>
 </div>
 <div>

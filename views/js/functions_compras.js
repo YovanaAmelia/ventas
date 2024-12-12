@@ -64,14 +64,14 @@ if(json.status){
 
 }
 async function ver_compras(id) {
-    const formData = new FormData();
-    formData.append('id_compras',id);
+    const formdata = new FormData();
+    formdata.append('id_compras',id);
     try{
  let respuesta = await fetch(base_url+'controller/compras.php?tipo=ver',{
     method: 'POST',
     mode:'cors',
     cache:'no-cache',
-    body:formData
+    body:formdata
  });
  json = await respuesta.json();
  if (json.status){

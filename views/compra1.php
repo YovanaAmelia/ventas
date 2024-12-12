@@ -14,15 +14,7 @@
            
         </tr>
         <tbody id="tbl_compra1">
-        <tr>
-            <td>1</td>
-            <td>01</td>
-            <td>0.1</td>
-            <td>2</td>
-            <td>rosa</td>
-            <td><button type="button" class="btn btn-success">editar</button> 
-            <button type="button" class="btn btn-success">eliminar</button></td>
-        </tr>
+      
      
 
         </tbody>

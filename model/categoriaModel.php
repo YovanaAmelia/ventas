@@ -33,7 +33,7 @@ public function vercategorias($id){
 }
 
   public function actualizarCategorias($nombre,$detalle){
-      $sql = $this->conexion->query("CALL actualizarCategorias('{'{$nombre}','{$detalle}')");
+      $sql = $this->conexion->query("CALL actualizarCategoria('{'{$nombre}','{$detalle}')");
       $sql = $sql->fetch_object();
       return $sql;
   }

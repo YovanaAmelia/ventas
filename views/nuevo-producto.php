@@ -4,7 +4,7 @@
     <!-- Código -->
     <div class="form-group">
         <label for="codigo">Código</label>
-        <input type="number" placeholder="Ingrese el código" id="codigo" name="codigo" class="form-control" required>
+        <input type="text" placeholder="Ingrese el código" id="codigo" name="codigo" class="form-control" required>
     </div>
 
     <!-- Nombre -->

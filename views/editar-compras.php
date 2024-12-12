@@ -26,7 +26,7 @@ onclick="actualizar_Producto(id_p);">actualizar</button>
 <script> listar_compras();</script>
 
 <script>
-    //http://localhost/ventas/editar-producto/4
+    //http://localhost/ventas/editar-compras/4
     const id_p=<?php $pagina=explode("/", $_GET['views']); echo $pagina['1'];?>;
     ver_compras(id_p);
 </script>

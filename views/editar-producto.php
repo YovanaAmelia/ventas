@@ -1,10 +1,9 @@
-<form action="" class="form-container shadow" id="frmRegistrar">
-    <h2 class="text-center mb-4">Registro de Producto</h2>
-
-    <!-- Código -->
-    <div class="form-group">
-        <label for="codigo">Código</label>
-        <input type="number" placeholder="Ingrese el código" id="codigo" name="codigo" class="form-control" required>
+<form action="" class="from-control" id="frmActualizar">
+    <input type="hidden" name="id_producto" id="id_producto">
+    <input type="hidden" name="img" id="img">
+    <div class="mb-3">
+        <label for="">Codigo: </label>
+        <input type="text" id="codigo" name="codigo" class="form-control" disabled>
     </div>
 
     <!-- Nombre -->

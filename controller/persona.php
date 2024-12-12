@@ -25,8 +25,8 @@ if ($tipo == "listar") {
 
       $id_persona = $arr_persona[$i]->id; // Obtener el id
       /* $nombre_personas = $arr_persona[$i]->$nombre_personas; */ // Obtener el nombre (sin sobrescribir el array)
-      $opciones = '    <button type="button" class="btn btn-success">editar</button>
-       <button type="button" class="btn btn-success">eliminar</button>'; 
+      $opciones ='<a href="'.BASE_URL.'editar-persona/'.
+      $id_persona. '">Editar</a> <button onclick="eliminar_persona('.$id_persona.');">Eliminar</button>';
       // Asignar opciones vacías
       $arr_persona[$i]->options = $opciones; // Agregar las opciones al objeto actual
     }
@@ -38,49 +38,36 @@ if ($tipo == "listar") {
 }
 
 
-if ($tipo == "registrar") {
-  #code...
+if ($tipo="registrar") {
+  //print_r($_POST);
+  if ($_POST) {
+      $nro_identidad = $_POST['nro_identidad'];
+      $razon_social = $_POST['razon_social'];
+      $telefono = $_POST['telefono'];
+      $correo = $_POST['correo'];
+      $departamento = $_POST['departamento'];
+      $provincia = $_POST['provincia'];
+      $distrito = $_POST['distrito'];
+      $cod_postal = $_POST['cod_postal'];
+      $direccion = $_POST['direccion'];
+      $rol = $_POST['rol'];
 
-    if ($_POST) {
+      $secure_password = password_hash($nro_identidad,PASSWORD_DEFAULT);
 
-        $nro_identidad = $_POST['nro_identidad'];
-        $razon_social = $_POST['razon_social'];
-        $telefono = $_POST['telefono'];
-        $correo = $_POST['correo'];
-        $departamento = $_POST['departamento'];
-        $provincia = $_POST['provincia'];
-        $distrito = $_POST['distrito'];
-        $cod_postal = $_POST['cod_postal'];
-        $direccion = $_POST['direccion'];
-        $rol = $_POST['rol'];
-        $secure_password =password_hash($dni,PASSWORD_DEFAULT);
-      
-
-        // Validación de campos vacíos
-        if (
-            $nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" ||
-            $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" ||
-            $direccion == "" || $rol == ""||$secure_password==""
-        ) {
-            $arr_Respuesta = array(
-                'status' => false,
-                'mensaje' => 'Error, campos vacios'
-              );
-            } else {
-              $arrpersona = $objpersona->registrar_persona($nro_identidad,$razon_social,$telefono,$correo,$departamento,
-              $provincia,$distrito,$cod_postal,$direccion,$rol,$secure_password);
-        
-              if ($arrpersona->id > 0) {
-                $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro exitoso');
-                //cargar archivo
-                
-                 } else {
-                $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al registrar persona');
-              }
-              echo json_encode($arr_Respuesta);
-            }
+      if ($nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" || $departamento == "" || $cod_postal == "" || $direccion == "" || $rol == "") {
+          //repuesta
+          $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
+      } else {
+          $arrpersona = $objpersona->registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $cod_postal, $direccion, $rol, $secure_password);
+          if ($arrpersona->id > 0) {
+              $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro Exitoso');
+          } else {
+              $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al registrar persona');
           }
-        } 
+          echo json_encode($arr_Respuesta);
+      }
+  }
+}
         if ($tipo == "ver") {
           //print_r($_POST);
           $id_persona = $_POST['id_persona'];
