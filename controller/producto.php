@@ -92,34 +92,34 @@ if ($tipo == "registrar") {
 
 
 if ($tipo == "ver") {
- //print_r($_POST);
- $id_producto = $_POST['id_producto'];
- $arr_Respuestas = $objProducto->verProducto($id_producto);
-// print_r($arr_Respuestas);
-if(empty($arr_Respuestas)){
-$response = array('status'=>false,'mensaje'=>"Error, no hay informacion");
-}else{  
-  $response =array('status'=>true,'contenido'=>$arr_Respuestas);
-}
-echo json_encode($response);
+  //print_r($_POST);
+  $id_producto = $_POST['id_producto'];
+  $arr_Respuesta = $objProducto->verProducto($id_producto);
+  //print_r($arr_Respuesta);
+  if (empty($arr_Respuesta)) {
+      $response = array('status' => false, 'mensaje' => "Error, no hay informacion");
+  } else {
+      $response = array('status' => true, 'mensaje' => "datos encontrados", 'contenido' => $arr_Respuesta);
+  }
+  echo json_encode($response);
 }
 
-if ($tipo == "actualizar") {
+if($tipo == "actualizar") {
   //print_r($_POST);
   //print_r($_FILES['imagen']['tmp_name']);
-
+  if ($_POST) {
   $id_producto = $_POST['id_producto'];
   $img = $_POST['img'];
   $nombre = $_POST['nombre'];
   $detalle = $_POST['detalle'];
   $precio = $_POST['precio'];
   $categoria = $_POST['idcategoria'];
-$proveedor = $_POST['Proveedor'];
-  if ($nombre == "" || $detalle == "" || $precio == "" || $categoria == "" ||  $proveedor == "") {
-      //repuesta
-      $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
+  $proveedor = $_POST['Proveedor'];
+  if ($nombre == "" || $detalle == "" || $precio == "" || $categoria == "" || $Proveedor == "") {
+      $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacios'); //respuesta
+
   } else {
-      $arrProducto = $objProducto->actualizarProducto($id_producto,$nombre, $detalle, $precio, $categoria, $proveedor);
+      $arrProducto = $objProducto->actualizarProducto($id_producto, $nombre, $detalle, $precio, $categoria, $proveedor);
       if ($arrProducto->p_id > 0) {
           $arr_Respuesta = array('status' => true, 'mensaje' => 'Actualizado Correctamente');
 
@@ -136,9 +136,11 @@ $proveedor = $_POST['Proveedor'];
       } else {
           $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al actualizar producto');
       }
+      echo json_encode($arr_Respuesta);
   }
-  echo json_encode($arr_Respuesta);
 }
+}
+
 if ($tipo == "eliminar") {
   //print_r($_POST);
   $id_producto = $_POST['id_producto'];

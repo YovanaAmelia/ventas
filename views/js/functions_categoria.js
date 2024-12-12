@@ -120,7 +120,7 @@ async function actualizar_categoria(id) {
          console.log("Oops, ocurrio un error" + e);
      }
  
-<<<<<<< HEAD
+
  }  
  async function eliminar_categoria(id) {
     swal({
@@ -159,8 +159,8 @@ if(json.status){
     console.log("ocurrio error"+e);
  }
 }
-=======
- }
+
+ 
 
  async function ver_categoria(id) {
     const formData = new FormData();
@@ -206,4 +206,4 @@ async function actualizarCategoria() {
         console.log("Oops, ocurrio un error categoria"+e);
     }
  }
->>>>>>> c3f765f05265c02dd23501c9a40163ee66feb18e
+

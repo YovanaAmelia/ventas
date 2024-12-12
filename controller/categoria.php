@@ -2,19 +2,19 @@
 require_once ('../model/categoriaModel.php');
 $tipo = $_REQUEST['tipo'];
 
-$objcategoria = new categoriaModel();
+$objcategorias = new categoriaModel();
 
 
 //instancio el clase modeloproducto
 if ($tipo == "listar") {
 
  $arr_Respuesta = array('status' => false, 'contenido' => '');
-  $arr_categoria = $objcategoria->obtener_Categorias();
+  $arr_categorias = $objcategorias->obtener_Categorias();
   if (!empty($arr_categoria)) {
     // recordemos el array para agregar las opciones de las categorias
     for ($i = 0; $i < count($arr_categoria); $i++) {
       $id_categoria = $arr_categoria[$i]->id;
-      $r_categoria = $objcategoria->obtener_categorias($id_categoria);
+      $r_categoria = $objcategorias->obtener_categorias($id_categoria);
       $arr_categoria[$i]->categoria = $r_categoria;
 
         $id_categoria = $arr_categoria[$i]->id; // Obtener el id
@@ -28,9 +28,9 @@ if ($tipo == "listar") {
     $arr_Respuesta['contenido'] = $arr_categoria;
     #code...
 
-
+  }
   $arr_Respuesta = array('status'=>false, 'contenido'=>'');
-  $arr_Categorias = $objCategoria->obtener_categorias();
+  $arr_categorias = $objcategorias->obtener_categorias();
   if (!empty($arr_Categorias)) {
       //recorremos el array para agregar las opciones de las categorias
       for ($i=0; $i < count($arr_Categorias); $i++) { //declara una variable siendo 0 el valor inicial -- define hasta donde sera el bucle -- aumenta +1

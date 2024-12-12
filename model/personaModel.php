@@ -15,16 +15,27 @@ public function obtener_personas(){
     while ($objeto = $respuesta->fetch_object()){
       array_push($arrRespuesta, $objeto);
     }
-    return $arrRespuesta; 
+    return $arrRespuesta;
 }
 
-<<<<<<< HEAD
+public function obtener_persona($id){
+    $respuesta = $this->conexion->query("SELECT * FROM persona WHERE id = '{$id}'");
+    $objeto = $respuesta->fetch_object();
+    return $objeto;
+}
+
+public function obtener_trabajador_id($id){
+    $respuesta = $this->conexion->query("SELECT * FROM  persona WHERE id = '{$id}'");
+    $objeto = $respuesta->fetch_object();
+    return $objeto;
+}
+
 public function registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $codpostal, $direccion, $rol, $password){
     $sql = $this->conexion->query("CALL insertarPersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}','{$provincia}','{$distrito}','{$codpostal}','{$direccion}','{$rol}','{$password}')");
-=======
-public function registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $codpostal, $direccion, $rol, $password){
-    $sql = $this->conexion->query("CALL insertarPersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}','{$codpostal}','{$direccion}','{$rol}','{$password}')");
->>>>>>> c3f765f05265c02dd23501c9a40163ee66feb18e
+
+/* public function registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $codpostal, $direccion, $rol, $password){
+    $sql = $this->conexion->query("CALL insertarPersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}','{$codpostal}','{$direccion}','{$rol}','{$password}')"); */
+
     $sql = $sql->fetch_object();
     return $sql;
 }
@@ -45,6 +56,12 @@ public function registrarPersona($nro_identidad, $razon_social, $telefono, $corr
         '{$provincia}','{$distrito}','{$cod_postal}','{$direccion}','{$rol}','{$password}')");
         $sql = $sql->fetch_object();
         return $sql;
+    }
+    public function eliminar_persona($id){
+        $sql = $this->conexion->query("CALL eliminarPersona('{$id}')");
+        $sql = $sql->fetch_object();
+        return$sql;
+    
     }
 }
 

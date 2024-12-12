@@ -18,6 +18,12 @@ public function obtener_productos(){
     return $arrRespuesta; 
 }
 
+public function obtener_producto_id($id){
+    $respuesta = $this->conexion->query("SELECT nombre FROM producto WHERE id = '{$id}'");
+    $objeto = $respuesta->fetch_object();
+    return $objeto;
+}
+
 
     public function registrar_producto($codigo,$nombre,$detalle,$precio,$stock,
     $categoria,$imagen,$proveedor,$tipoArchivo){

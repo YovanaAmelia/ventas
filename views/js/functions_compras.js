@@ -32,7 +32,7 @@ async function listar_compras() {
  listar_compras();
  }
 
-async function registrar_compras() {
+async function registrarCompras() {
     let id_producto = document.getElementById('id_producto').value;
     let cantidad = document.querySelector('#cantidad').value;
     let precio = document.querySelector('#precio').value;

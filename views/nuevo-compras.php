@@ -29,7 +29,7 @@
     </a>
 
      <div>
-     <button type="button" class="btn btn-success btn-lg" onclick="registrar_compras();">
+     <button type="button" class="btn btn-success btn-lg" onclick="registrarCompras();">
             <i class="fas fa-check"></i> Registrar
         </button>
 </div>

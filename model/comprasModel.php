@@ -18,16 +18,16 @@ public function obtener_compras(){
     return $arrRespuesta; 
 }
 
-    public function registrar_compras($id_producto,$cantidad,$precio,$id_trabajador){
-
-        $sql =$this->conexion->query
-        ("CALL insertarCompras('{$id_producto}','{$cantidad}','{$precio}','{$id_trabajador}')");
-        $sql = $sql->fetch_object();
-        return $sql;
-    }
-   
-
-public function vercompras($id){
+public function registrarCompras(
+    $id_producto,
+    $cantidad,
+    $precio,
+    $id_trabajador) {
+    $sql = $this->conexion->query("CALL insertarCompras('{$id_producto}','{$cantidad}','{$precio}','{$id_trabajador}')");
+    $sql = $sql->fetch_object();
+    return $sql;
+}
+public function ver_compras($id){
     $sql = $this->conexion->query("SELECT *FROM compras WHERE id='$id'");
     $sql =$sql->fetch_object();
     return $sql;
@@ -35,6 +35,11 @@ public function vercompras($id){
 
     public function actualizarCompras($id_producto,$cantidad,$precio,$id_trabajador){
         $sql = $this->conexion->query("CALL actualizarCompras('{$id_producto}','{$cantidad}','{$precio}','{$id_trabajador}')");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
+    public function eliminar_compra($id){
+        $sql = $this->conexion->query("CALL eliminarCompras('{$id}')");
         $sql = $sql->fetch_object();
         return $sql;
     }
