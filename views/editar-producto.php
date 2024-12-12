@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form action="" class="form-container shadow" id="frmRegistrar">
     <h2 class="text-center mb-4">Registro de Producto</h2>
 
@@ -5,6 +6,14 @@
     <div class="form-group">
         <label for="codigo">Código</label>
         <input type="text" placeholder="Ingrese el código" id="codigo" name="codigo" class="form-control" required>
+=======
+<form action="" class="from-control" id="frmActualizar">
+    <input type="hidden" name="id_producto" id="id_producto">
+    <input type="hidden" name="img" id="img">
+    <div class="mb-3">
+        <label for="">Codigo: </label>
+        <input type="text" id="codigo" name="codigo" class="form-control" disabled>
+>>>>>>> c3f765f05265c02dd23501c9a40163ee66feb18e
     </div>
 
     <!-- Nombre -->

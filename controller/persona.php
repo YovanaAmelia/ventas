@@ -54,11 +54,19 @@ if ($tipo="registrar") {
 
       $secure_password = password_hash($nro_identidad,PASSWORD_DEFAULT);
 
+<<<<<<< HEAD
       if ($nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" || $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" || $direccion == "" || $rol == "") {
           //repuesta
           $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
       } else {
           $arrpersona = $objpersona->registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $cod_postal, $direccion, $rol, $secure_password);
+=======
+      if ($nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" || $departamento == "" || $cod_postal == "" || $direccion == "" || $rol == "") {
+          //repuesta
+          $arr_Respuesta = array('status' => false, 'mensaje' => 'Error, campos vacíos');
+      } else {
+          $arrpersona = $objpersona->registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $cod_postal, $direccion, $rol, $secure_password);
+>>>>>>> c3f765f05265c02dd23501c9a40163ee66feb18e
           if ($arrpersona->id > 0) {
               $arr_Respuesta = array('status' => true, 'mensaje' => 'Registro Exitoso');
           } else {

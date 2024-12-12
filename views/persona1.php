@@ -18,24 +18,7 @@
             </tr>
         </thead>
         <tbody id="tbl_persona1">
-            <tr>
-                <td>1</td>
-                <td>01</td>
-                <td>Maestra</td>
-                <td>97812546</td>
-                <td>yovana@gmail.com</td>
-                <td>Ayacucho</td>
-                <td>Huanta</td>
-                <td>Huanta</td>
-                <td>001</td>
-                <td>Jr. Razuhillca</td>
-                <td>Estudiante</td>
-                <td>000000</td>
-                <td>
-                    <button type="button" class="btn btn-edit">Editar</button>
-                    <button type="button" class="btn btn-delete">Eliminar</button>
-                </td>
-            </tr>
+          
         </tbody>
     </table>
 </div>

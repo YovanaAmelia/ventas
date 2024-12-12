@@ -7,6 +7,7 @@ $objcategoria = new categoriaModel();
 
 //instancio el clase modeloproducto
 if ($tipo == "listar") {
+
  $arr_Respuesta = array('status' => false, 'contenido' => '');
   $arr_categoria = $objcategoria->obtener_Categorias();
   if (!empty($arr_categoria)) {
@@ -26,8 +27,26 @@ if ($tipo == "listar") {
     $arr_Respuesta['status'] = true;
     $arr_Respuesta['contenido'] = $arr_categoria;
     #code...
+
+
+  $arr_Respuesta = array('status'=>false, 'contenido'=>'');
+  $arr_Categorias = $objCategoria->obtener_categorias();
+  if (!empty($arr_Categorias)) {
+      //recorremos el array para agregar las opciones de las categorias
+      for ($i=0; $i < count($arr_Categorias); $i++) { //declara una variable siendo 0 el valor inicial -- define hasta donde sera el bucle -- aumenta +1
+          $id_categoria = $arr_Categorias[$i]->id;
+          $categoria =  $arr_Categorias[$i]->nombre;
+          $opciones = '
+           <a href="'.BASE_URL.'editar-categoria/'.$id_categoria.'"><i class="fas fa-edit btn btn-info btn-sm"></i></a>
+               <button onclick="eliminar_categoria('.$id_categoria.');"class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+          ';
+          $arr_Categorias[$i]->options = $opciones;
+      }
+      $arr_Respuesta['status'] = true;
+      $arr_Respuesta['contenido'] =  $arr_Categorias;
+
   }
-  echo json_encode($arr_Respuesta);
+  echo json_encode($arr_Respuesta); //convertir en formeato -- 
 }
 
 
@@ -72,6 +91,8 @@ if ($tipo == "registrar") {
      }
      echo json_encode($response);
      }
+
+
      if ($tipo == "actualizar") {
       //print_r($_POST);
       //print_r($_FILES['imagen']['tmp_name']);
@@ -93,4 +114,7 @@ if ($tipo == "registrar") {
       }
       echo json_encode($arr_Respuesta);
     }
+
+
+  
     ?>

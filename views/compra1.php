@@ -14,6 +14,7 @@
            
         </tr>
         <tbody id="tbl_compra1">
+<<<<<<< HEAD
       <!--  <tr>
             <td>1</td>
             <td>01</td>
@@ -23,6 +24,9 @@
         <!--     <td><button type="button" class="btn btn-success">editar</button> 
             <button type="button" class="btn btn-success">eliminar</button></td> -->
         </tr>  -->
+=======
+      
+>>>>>>> c3f765f05265c02dd23501c9a40163ee66feb18e
      
 
         </tbody>

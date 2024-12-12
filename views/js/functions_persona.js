@@ -82,14 +82,14 @@ if(json.status){
 
 }
 async function ver_persona(id) {
-    const formData = new FormData();
-    formData.append('id_persona',id);
+    const formdata = new FormData();
+    formdata.append('id_persona',id);
     try{
  let respuesta = await fetch(base_url+'controller/persona.php?tipo=ver',{
     method: 'POST',
     mode:'cors',
     cache:'no-cache',
-    body:formData
+    body:formdata
  });
  json = await respuesta.json();
  if (json.status){

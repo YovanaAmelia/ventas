@@ -18,8 +18,13 @@ public function obtener_personas(){
     return $arrRespuesta; 
 }
 
+<<<<<<< HEAD
 public function registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $codpostal, $direccion, $rol, $password){
     $sql = $this->conexion->query("CALL insertarPersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}','{$provincia}','{$distrito}','{$codpostal}','{$direccion}','{$rol}','{$password}')");
+=======
+public function registrarPersona($nro_identidad, $razon_social, $telefono, $correo, $departamento, $codpostal, $direccion, $rol, $password){
+    $sql = $this->conexion->query("CALL insertarPersona('{$nro_identidad}','{$razon_social}','{$telefono}','{$correo}','{$departamento}','{$codpostal}','{$direccion}','{$rol}','{$password}')");
+>>>>>>> c3f765f05265c02dd23501c9a40163ee66feb18e
     $sql = $sql->fetch_object();
     return $sql;
 }
